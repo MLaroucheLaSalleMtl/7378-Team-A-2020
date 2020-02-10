@@ -4941,7 +4941,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 1
 --- !u!54 &238830239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26466,21 +26466,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.457016, y: 1, z: 2.8934898}
   m_Center: {x: -0.047721863, y: 1.5, z: 0.32440758}
---- !u!114 &1359896032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359896026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec5797701c33fe43ada7dca610c2977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tpuc: {fileID: 238830236}
-  fov: 120
-  viewDistance: 10
 --- !u!4 &1360250324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fffb86171f313ff47a56616553063009,

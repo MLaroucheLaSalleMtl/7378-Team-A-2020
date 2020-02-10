@@ -22,7 +22,7 @@ public class DragonControl : MonoBehaviour
     {
         if (isAware)
         {
-            Debug.Log("chanse player");
+            agent.SetDestination(tpuc.transform.position);
         }
         else
         {
