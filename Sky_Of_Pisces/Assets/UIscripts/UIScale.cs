@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class UIScale : MonoBehaviour
+public class UIScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public void PointerEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.localScale = new Vector2(1.2f, 1.2f);
+        
+        transform.localScale = new Vector2(1.1f, 1.1f);
     }
 
-    public void PointerExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        transform.localScale = new Vector2(0.5f, 0.5f);
+        transform.localScale = new Vector2(1f, 1f);
     }
 }
