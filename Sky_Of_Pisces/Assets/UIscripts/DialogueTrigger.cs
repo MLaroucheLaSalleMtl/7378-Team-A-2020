@@ -13,32 +13,31 @@ public class DialogueTrigger : MonoBehaviour
 
     private FreeLookCam fc;
     private bool reset = false;
+
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             dialogueBox.SetActive(true);
             FreeLookCam.OnDialogue = true;
-            if(!reset)
-            {
-                anim.SetFloat("Forward", 0);
-                reset = true;
-            }
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            player.GetComponent<ThirdPersonUserControl>().enabled = false;
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-            //Time.timeScale = 0f;
+                if (!reset)
+                {                
+                    anim.SetFloat("Forward", 0);
+                    reset = true;
+                }
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                player.GetComponent<ThirdPersonUserControl>().enabled = false;
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);                   
         }
     }
-    public void OnMouseDown()
-    {
-        
-    }
+   
     private void OnTriggerExit(Collider other)
     {
         reset = false;
-
+        
     }
 
     //public void TriggerDialogue()

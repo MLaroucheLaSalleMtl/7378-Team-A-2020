@@ -14,6 +14,9 @@ public class DialogueManager : MonoBehaviour
     private FreeLookCam fc;
     public GameObject player;
 
+    // To show Quest at the left top
+    public GameObject Quest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +26,11 @@ public class DialogueManager : MonoBehaviour
    
     public void StartDialogue(Dialogue dialogue)
     {
-        print("Staring" + dialogue.NPCname);
-        
+       
+        Quest.SetActive(false);
         sentences.Clear();
-
-        foreach(string sentence in dialogue.sentences)
+        
+        foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -38,8 +41,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(sentences.Count == 0)
         {
-            EndDialogue();
-           
+            EndDialogue();           
             return;
         }
         string sentence = sentences.Dequeue();
@@ -49,9 +51,10 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         FreeLookCam.OnDialogue = false;
-        print("End");
+        
         dialogueBox.SetActive(false);
         player.GetComponent<ThirdPersonUserControl>().enabled = true;
-        //Time.timeScale = 1f;
+        Quest.SetActive(true);
+        
     }
 }
