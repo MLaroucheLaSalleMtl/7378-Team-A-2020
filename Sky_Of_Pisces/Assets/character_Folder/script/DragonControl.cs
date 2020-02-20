@@ -15,12 +15,16 @@ public class DragonControl : MonoBehaviour
     public float wanderRadius = 7f;
     private Vector3 wanderPoint;
 
-    public enum wanderpos { random, wayPoint};
+    public Transform[] waypos;
+    private int wayposIndex = 0;
+
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         wanderPoint = RandomWanderPos();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +53,14 @@ public class DragonControl : MonoBehaviour
                     if (hit.transform.CompareTag("Player"))
                     {
                         onAware();
+                        if (agent.remainingDistance < 8f)
+                        {
+                            anim.SetBool("Attack", true);
+                        }
+                        else
+                        {
+                            anim.SetBool("CornAttack", true);
+                        }
                     }
                 }
             }
@@ -58,18 +70,37 @@ public class DragonControl : MonoBehaviour
     public void onAware()
     {
         isAware = true;
+        anim.SetBool("Run", true);
     }
 
     public void wander()
     {
-        if (Vector3.Distance(transform.position, wanderPoint) < 2f)
+        //if (Vector3.Distance(transform.position, wanderPoint) < 2f)
+        //{
+        //    wanderPoint = RandomWanderPos(); //have reached it, make a new wanderpoint
+        //}
+        //else
+        //{
+        //    agent.SetDestination(wanderPoint); //have not reach it, move to the wanderpoint
+        //}
+        
+        if (Vector3.Distance(waypos[wayposIndex].position, transform.position) < 2f) //return the distance between the wandering position and enemy position
         {
-            wanderPoint = RandomWanderPos(); //have reached it, make a new wanderpoint
+            if (wayposIndex == waypos.Length - 1)
+            {
+                wayposIndex = 0;
+            }
+            else
+            {
+                
+                wayposIndex++;
+            }
         }
         else
         {
-            agent.SetDestination(wanderPoint); //have not reach it, move to the wanderpoint
+            agent.SetDestination(waypos[wayposIndex].position);
         }
+
     }
 
     public Vector3 RandomWanderPos()
