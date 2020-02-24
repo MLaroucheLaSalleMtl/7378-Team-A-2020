@@ -28,8 +28,10 @@ namespace UnityStandardAssets.Cameras
 		private Vector3 m_PivotEulers;
 		private Quaternion m_PivotTargetRot;
 		private Quaternion m_TransformTargetRot;
+        public static bool OnDialogue = false;
 
         private Vector2 deltaMouse = new Vector2(0, 0);
+
 
         public void onLook(InputAction.CallbackContext context)
         {
@@ -52,11 +54,15 @@ namespace UnityStandardAssets.Cameras
         protected void Update()
         {
             HandleRotationMovement();
-            if (m_LockCursor && Input.GetMouseButtonUp(0))
+            if(!OnDialogue)
             {
-                Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-                Cursor.visible = !m_LockCursor;
+                if (m_LockCursor && Input.GetMouseButtonUp(0))
+                {
+                    Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+                    Cursor.visible = !m_LockCursor;
+                }
             }
+            
         }
 
 
