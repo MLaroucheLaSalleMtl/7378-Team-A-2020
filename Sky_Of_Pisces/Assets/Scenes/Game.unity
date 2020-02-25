@@ -16729,6 +16729,8 @@ MonoBehaviour:
   - {fileID: 1187464205}
   - {fileID: 1264836782}
   - {fileID: 1068339479}
+  dragonCurrentState: 0
+  dragonLastState: 0
 --- !u!195 &881658705
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16763,6 +16765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c37c3f1ca546941939753bbc299e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &884256620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30616,7 +30619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1599585221
 Transform:
   m_ObjectHideFlags: 0
