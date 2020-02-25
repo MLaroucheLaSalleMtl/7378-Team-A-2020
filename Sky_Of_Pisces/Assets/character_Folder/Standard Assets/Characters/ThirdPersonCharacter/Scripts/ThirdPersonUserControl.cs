@@ -34,8 +34,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Vector2 value = context.ReadValue<Vector2>();
             h = value.x;
             v = value.y;
-            print(h);
-            print(v);
         }
 
         public void onJump(InputAction.CallbackContext context)
