@@ -17,7 +17,6 @@ public enum dragonState
 public class DragonControl : MonoBehaviour
 {
     public ThirdPersonUserControl tpuc;
-    private bool isAware = false;
     public float fov = 120f;
     public float viewDistance = 10;
     private NavMeshAgent agent;
@@ -30,13 +29,14 @@ public class DragonControl : MonoBehaviour
 
     private Animator anim;
 
-    private float attackDistance = 1.5f;
+    private float attackDistance = 5f;
     private float alertAttackDis = 8f;
     private float followDis = 15f;
     private float enemyToPlayerDis;
 
-    private dragonState dragonCurrentState = dragonState.Idle;
-    private dragonState dragonLastState = dragonState.Idle;
+    [HideInInspector]
+    public dragonState dragonCurrentState = dragonState.Idle;
+    public dragonState dragonLastState = dragonState.Idle;
 
     private Vector3 initialPos;
     private CharacterController charControl;
@@ -53,7 +53,6 @@ public class DragonControl : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        wanderPoint = RandomWanderPos();
         anim = GetComponent<Animator>();
         charControl = GetComponent<CharacterController>();
 
@@ -64,22 +63,13 @@ public class DragonControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isAware)
-        {
-            agent.SetDestination(tpuc.transform.position);
-        }
-        else
-        {
-            searchPlayer();
-            wander();
-        }
 
         if(dragonCurrentState != dragonState.Death)
         {
-            //dragonCurrentStare = SetDragonState
+            dragonCurrentState = SetDragonState(dragonCurrentState, dragonLastState, enemyToPlayerDis);
             if (finished_Movement)
             {
-                //GetStateControl
+                dragonStateControl(dragonCurrentState);
             }
             else
             {
@@ -109,7 +99,7 @@ public class DragonControl : MonoBehaviour
     {
         float initialDistance = Vector3.Distance(initialPos, transform.position); //this calculate the distance between the original position and current position
         dragonToPlayerDis = Vector3.Distance(transform.position, tpuc.transform.position);
-
+        
         if (initialDistance > followDis)// if the dragon exceed the follow distance, it returns to the initial position, 怪物范围8以外会返回上一个state
         {
             lastState = currentState;  //lets say the dragon is chesing the player, if it exceed 8, the state of chasing became last state
@@ -123,7 +113,7 @@ public class DragonControl : MonoBehaviour
         else if (dragonToPlayerDis >= alertAttackDis && lastState == dragonState.Pause || lastState == dragonState.Attack) //player runs away, chase player
         {
             lastState = currentState;
-            currentState = dragonState.Pause;
+            currentState = dragonState.Pause;  
         }
         else if (dragonToPlayerDis <= alertAttackDis && dragonToPlayerDis > attackDistance) //chase player
         {
@@ -142,73 +132,84 @@ public class DragonControl : MonoBehaviour
         return currentState;
     }
 
-    public void searchPlayer()
+    void dragonStateControl(dragonState currentState)
     {
-        if (Vector3.Angle(Vector3.forward, transform.InverseTransformPoint(tpuc.transform.position)) < fov / 2f)
+        if(currentState == dragonState.Run || currentState == dragonState.Pause)
         {
-            if (Vector3.Distance(tpuc.transform.position, transform.position) < viewDistance)
+            if (currentState != dragonState.Attack)
             {
-                RaycastHit hit;
-                if(Physics.Linecast(transform.position,tpuc.transform.position,out hit, -1))
+                Vector3 playerPosition = new Vector3(tpuc.transform.position.x, tpuc.transform.position.y, tpuc.transform.position.z);
+                if (Vector3.Distance(transform.position, playerPosition) >= 2.1f)
                 {
-                    if (hit.transform.CompareTag("Player"))
-                    {
-                        onAware();
-                        if (agent.remainingDistance < 8f)
-                        {
-                            anim.SetBool("Attack", true);
-                        }
-                        else
-                        {
-                            anim.SetBool("CornAttack", true);
-                        }
-                    }
+                        anim.SetBool("Walk", false);
+                        anim.SetBool("Run", true);
+                        agent.SetDestination(playerPosition);
                 }
             }
         }
-    }
-
-    public void onAware()
-    {
-        isAware = true;
-        anim.SetBool("Run", true);
-    }
-
-    public void wander()
-    {
-        //if (Vector3.Distance(transform.position, wanderPoint) < 2f)
-        //{
-        //    wanderPoint = RandomWanderPos(); //have reached it, make a new wanderpoint
-        //}
-        //else
-        //{
-        //    agent.SetDestination(wanderPoint); //have not reach it, move to the wanderpoint
-        //}
-        
-        if (Vector3.Distance(waypos[wayposIndex].position, transform.position) < 2f) //return the distance between the wandering position and enemy position
+        else if(currentState == dragonState.Attack)
         {
-            if (wayposIndex == waypos.Length - 1)
+            anim.SetBool("Run", false);
+            WhereToGo.Set(0f, 0f, 0f);
+            agent.SetDestination(transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(tpuc.transform.position - transform.position), 5f * Time.deltaTime); // keep looking at the player
+            
+            if(currentAttackTime >= waitAttackTime)//wait one sec and attack
             {
-                wayposIndex = 0;
+                int attackRange = Random.Range(1, 3);
+                anim.SetInteger("Attack", attackRange);
+                finished_Animation = false;
+                currentAttackTime = 0; //reset attack time
             }
             else
             {
-                
-                wayposIndex++;
+                anim.SetInteger("Attack", 0);
+                currentAttackTime += Time.deltaTime;
+            }
+        }
+        else if(currentState == dragonState.BackToWander)
+        {
+            anim.SetBool("Run", true);
+            Vector3 targetPosition = new Vector3(initialPos.x, transform.position.y, initialPos.z);
+            agent.SetDestination(targetPosition);
+            Debug.Log(Vector3.Distance(targetPosition, initialPos));
+            if (Vector3.Distance(targetPosition,initialPos) <= 0.5f)
+            {
+                dragonLastState = currentState;
+                currentState = dragonState.Walk;
+            }
+        }
+        else if(currentState == dragonState.Walk)
+        {
+            anim.SetBool("Run", false);
+            anim.SetBool("Walk", true);
+
+            if (Vector3.Distance(waypos[wayposIndex].position, transform.position) < 2f)
+            {
+                if (wayposIndex == waypos.Length - 1)
+                {
+                    wayposIndex = 0;
+                }
+                else
+                {
+
+                    wayposIndex++;
+                }
+            }
+            else
+            {
+                agent.SetDestination(waypos[wayposIndex].position);
             }
         }
         else
         {
-            agent.SetDestination(waypos[wayposIndex].position);
+            anim.SetBool("Run", false);
+            anim.SetBool("Walk", false);
+            WhereToGo.Set(0f, 0f, 0f);
+            agent.isStopped = true;
         }
-
     }
+    
 
-    public Vector3 RandomWanderPos()
-    {
-        Vector3 randomPos = (Random.insideUnitSphere * wanderRadius) + transform.position; //this sphere is made in the 0 orgin of the world, to make it in different we need to add the vector(transform)
-        NavMeshHit navhit;//to hold the property of resulting location
-        NavMesh.SamplePosition(randomPos, out navhit, wanderRadius, -1);//finds the closest point
-        return new Vector3(navhit.position.x, transform.position.y,navhit.position.z);  //returns the nearest x and z, y does not change
-    }
+    
 }
