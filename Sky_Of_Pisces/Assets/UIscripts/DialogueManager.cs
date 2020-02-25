@@ -7,23 +7,27 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
-   
+    public static int id = 0;
+    //Dialogue 
+    private Queue<string> sentences;   
     public Text dialogueText;
     public GameObject dialogueBox;
     private FreeLookCam fc;
     public GameObject player;
-
+    
     // To show Quest at the left top
     public GameObject Quest;
+    public Text questText;
 
-    // Start is called before the first frame update
-    void Start()
+    //Open the different portal
+
+
+    // Start is called before the first frame update   
+    private void Awake()
     {
         sentences = new Queue<string>();
     }
 
-   
     public void StartDialogue(Dialogue dialogue)
     {
        
@@ -51,10 +55,27 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         FreeLookCam.OnDialogue = false;
-        
+        GameObject.FindWithTag("Player").GetComponent<Animator>().enabled = true;
         dialogueBox.SetActive(false);
         player.GetComponent<ThirdPersonUserControl>().enabled = true;
         Quest.SetActive(true);
+
+        if (id == 1)
+        {
+            questText.text = "Kill the 5 dragons" ;
+        }
+        if (id == 2)
+        {
+            questText.text = "Kill the 9 boys";
+        }
+        if (id == 3)
+        {
+            questText.text = "Kill the 2 girls";
+        }
+        
+        
+
+
         
     }
 }
