@@ -20,7 +20,15 @@ public class DialogueManager : MonoBehaviour
     public Text questText;
 
     //Open the different portal
+    public GameObject EaglePortal;
+    public GameObject BandgerPortal;
+    public GameObject AntPortal;
 
+    //To show different path arrow
+    //public GameObject Arrow;
+    //[SerializeField] private Transform Eagle;
+    //[SerializeField] private Transform Ant;
+    //[SerializeField] private Transform Badger;
 
     // Start is called before the first frame update   
     private void Awake()
@@ -28,6 +36,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    
     public void StartDialogue(Dialogue dialogue)
     {
        
@@ -52,25 +61,47 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = sentence;
     }
 
+
     void EndDialogue()
     {
         FreeLookCam.OnDialogue = false;
         GameObject.FindWithTag("Player").GetComponent<Animator>().enabled = true;
         dialogueBox.SetActive(false);
         player.GetComponent<ThirdPersonUserControl>().enabled = true;
+        
+        //To show the quest panel
         Quest.SetActive(true);
+        //To show the arrow panel
+        //Arrow.SetActive(true);
 
+        //To identify which npc will lead to different conditions
         if (id == 1)
         {
             questText.text = "Kill the 5 dragons" ;
+            EaglePortal.SetActive(true);
+
+            //Vector3 targetPos = Eagle.transform.position;
+            //targetPos.y = transform.position.y;
+            //transform.LookAt(targetPos);
+
         }
         if (id == 2)
         {
-            questText.text = "Kill the 9 boys";
+            questText.text = "11";
+            BandgerPortal.SetActive(true);
+            
+            //Vector3 targetPos = Ant.transform.position;
+            //targetPos.y = transform.position.y;
+            //transform.LookAt(targetPos);
         }
         if (id == 3)
         {
-            questText.text = "Kill the 2 girls";
+            questText.text = "22";
+            AntPortal.SetActive(true);
+           
+            //Vector3 targetPos = Badger.transform.position;
+            //targetPos.y = transform.position.y;
+            //transform.LookAt(targetPos);
         }
         
         
