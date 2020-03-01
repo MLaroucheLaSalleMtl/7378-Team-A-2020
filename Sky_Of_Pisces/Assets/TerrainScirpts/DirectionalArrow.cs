@@ -23,14 +23,14 @@ public class DirectionalArrow : MonoBehaviour
         if (DialogueManager.id == 2)
         {
             arrow.SetActive(true);
-            Vector3 targetPos = Ant.transform.position;
+            Vector3 targetPos = Badger.transform.position;
             targetPos.y = transform.position.y;
             transform.LookAt(targetPos);
         }
         if (DialogueManager.id == 3)
         {
             arrow.SetActive(true);
-            Vector3 targetPos = Badger.transform.position;
+            Vector3 targetPos = Ant.transform.position;
             targetPos.y = transform.position.y;
             transform.LookAt(targetPos);
         }

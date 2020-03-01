@@ -7,7 +7,7 @@ public class Ant : MonoBehaviour
 {
     public Text EagleName;
     public Image EagleNameBorder;
-   
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class Ant : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             fadeIn();
+            arrow.SetActive(false);
         }
     }
 

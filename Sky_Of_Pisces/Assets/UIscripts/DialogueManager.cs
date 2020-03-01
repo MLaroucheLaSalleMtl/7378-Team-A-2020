@@ -71,15 +71,14 @@ public class DialogueManager : MonoBehaviour
         
         //To show the quest panel
         Quest.SetActive(true);
-        //To show the arrow panel
-        //Arrow.SetActive(true);
-
+       
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
             questText.text = "Kill the 5 dragons" ;
             EaglePortal.SetActive(true);
-
+            BandgerPortal.SetActive(false);
+            AntPortal.SetActive(false);
             //Vector3 targetPos = Eagle.transform.position;
             //targetPos.y = transform.position.y;
             //transform.LookAt(targetPos);
@@ -87,18 +86,20 @@ public class DialogueManager : MonoBehaviour
         }
         if (id == 2)
         {
-            questText.text = "11";
+            questText.text = "Defeat 10 dragons";
             BandgerPortal.SetActive(true);
-            
+            AntPortal.SetActive(false);
+            EaglePortal.SetActive(false);
             //Vector3 targetPos = Ant.transform.position;
             //targetPos.y = transform.position.y;
             //transform.LookAt(targetPos);
         }
         if (id == 3)
         {
-            questText.text = "22";
+            questText.text = "Defeat 15 dragons";
             AntPortal.SetActive(true);
-           
+            EaglePortal.SetActive(false);
+            BandgerPortal.SetActive(false);
             //Vector3 targetPos = Badger.transform.position;
             //targetPos.y = transform.position.y;
             //transform.LookAt(targetPos);

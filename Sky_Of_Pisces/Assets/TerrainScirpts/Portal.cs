@@ -12,6 +12,7 @@ public class Portal : MonoBehaviour
        if(other.gameObject.tag == "Player")
         {
             other.gameObject.transform.position = level1Gozone.position;
+           
         }
       
     }

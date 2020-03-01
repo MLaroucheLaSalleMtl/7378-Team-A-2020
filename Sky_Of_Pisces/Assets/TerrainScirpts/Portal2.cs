@@ -5,7 +5,7 @@ using UnityEngine;
 public class Portal2 : MonoBehaviour
 {
     public Transform level2Gozone;
-
+    
 
     private void OnTriggerEnter(Collider other)
     {

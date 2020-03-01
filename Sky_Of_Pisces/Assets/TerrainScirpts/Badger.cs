@@ -8,7 +8,7 @@ public class Badger : MonoBehaviour
        
     public Text BadgerName;
     public Image BadgerNameBorder;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +21,8 @@ public class Badger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            
-            //GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Play();
+
+            GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
             fadeIn();
         }
     }
@@ -30,8 +30,8 @@ public class Badger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+
             
-            //GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
             fadeOut();
 
         }
