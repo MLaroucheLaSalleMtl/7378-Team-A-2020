@@ -51068,6 +51068,7 @@ GameObject:
   - component: {fileID: 238830238}
   - component: {fileID: 8296172667444716099}
   - component: {fileID: 8296172667444716100}
+  - component: {fileID: 8296172667444716101}
   m_Layer: 8
   m_Name: character
   m_TagString: Player
@@ -51107,6 +51108,20 @@ LensFlare:
     serializedVersion: 2
     m_Bits: 6
   m_Directional: 1
+--- !u!114 &8296172667444716101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172667444716098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f6ce82285d1c446957e964b80bd2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 968386056}
+  slotCage: {fileID: 2012750328}
 --- !u!1 &8298780802104737420
 GameObject:
   m_ObjectHideFlags: 0
