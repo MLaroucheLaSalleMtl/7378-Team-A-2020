@@ -10,12 +10,12 @@ public class Item : MonoBehaviour
     public Sprite icon;
     public bool pickedUp;
 
-    [HideInInspector]
-    public bool equipped;
-    public GameObject weapon;
-    public GameObject weaponManager;
+    //[HideInInspector]
+    //public bool equipped;
+    //public GameObject weapon;
+    //public GameObject weaponManager;
 
-    public bool playersWeapon;
+    //public bool playersWeapon;
 
     [HideInInspector]
     public bool drunk;
@@ -30,19 +30,19 @@ public class Item : MonoBehaviour
             drunk = true;
         }
         //Weapon
-        if (type == "Weapon")
-        {
-            equipped = true;
-        }
+        //if (type == "Weapon")
+        //{
+        //    equipped = true;
+        //}
     }
     // Start is called before the first frame update
     void Start()
     {
-        weaponManager = GameObject.FindWithTag("weaponManager");
-        if (!playersWeapon)
-        {
+        //weaponManager = GameObject.FindWithTag("weaponManager");
+        //if (!playersWeapon)
+        //{
 
-        }
+        //}
     }
 
     // Update is called once per frame
@@ -52,9 +52,9 @@ public class Item : MonoBehaviour
         {
             //show drinking effects
         }
-        if (equipped)
-        {
-            //no need to show weapon change
-        }
+        //if (equipped)
+        //{
+        //    //no need to show weapon change
+        //}
     }
 }
