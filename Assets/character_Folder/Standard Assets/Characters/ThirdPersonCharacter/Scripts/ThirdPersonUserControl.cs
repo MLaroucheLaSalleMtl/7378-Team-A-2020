@@ -24,9 +24,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         bool Dodge = false;
 
         Animator anim;
-        public int numOfclick = 0;
-        float lastClickTime = 0;
-        float maxDelay = 1f;
 
         //this is the receiver
         public void OnMove(InputAction.CallbackContext context)
@@ -67,29 +64,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
         }
 
-        public void onAttack(InputAction.CallbackContext context)
-        {
-            //Fire = context.performed;
-            //anim.SetBool("Attack1", Fire);
-            if (Fire = context.performed)
-            {
-                lastClickTime = Time.time;
-                numOfclick++;
-            }
 
-            if (numOfclick >= 1)
-            {
-                anim.SetBool("A1",true);
-            }
-            if(numOfclick >= 2)
-            {
-                anim.SetBool("A2", true);
-            }
-            if (numOfclick >= 3)
-            {
-                anim.SetBool("A3", true);
-            }
-        }
+
 
         public void onDodge(InputAction.CallbackContext context)
         {
@@ -128,17 +104,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 m_Jump = jumping;
                 jumping = false;
             }
-            if (Time.time - lastClickTime > maxDelay)
-            {
-                numOfclick = 0;
-                anim.SetBool("A1", false);
-                anim.SetBool("A2", false);
-                anim.SetBool("A3", false);
-            }
 
 
         }
-        
+
+    
 
         // Fixed update is called in sync with physics
         private void FixedUpdate()
@@ -172,7 +142,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 
 
-
+    
       
     }
 }
