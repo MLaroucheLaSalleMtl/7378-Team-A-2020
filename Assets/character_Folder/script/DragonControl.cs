@@ -39,7 +39,6 @@ public class DragonControl : MonoBehaviour
     public dragonState dragonLastState = dragonState.Idle;
 
     private Vector3 initialPos;
-    private CharacterController charControl;
     private Vector3 WhereToGo = Vector3.zero;
 
     private float currentAttackTime;
@@ -54,7 +53,6 @@ public class DragonControl : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        charControl = GetComponent<CharacterController>();
 
         initialPos = transform.position;
         whereTo_Navigate = transform.position;
@@ -86,7 +84,6 @@ public class DragonControl : MonoBehaviour
         else
         {
             anim.SetBool("Die", true);
-            charControl.enabled = false;
             agent.enabled = false;
             if(!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Die") &&anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95)// 1 is the end of animation
             {
