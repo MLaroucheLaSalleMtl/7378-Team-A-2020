@@ -7,7 +7,10 @@ TagManager:
   - NPC1
   - NPC2
   - NPC3
+<<<<<<< HEAD
   - Item
+=======
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
