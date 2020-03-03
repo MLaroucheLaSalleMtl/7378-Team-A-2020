@@ -153,8 +153,9 @@ public class DragonControl : MonoBehaviour
             WhereToGo.Set(0f, 0f, 0f);
             agent.SetDestination(transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(tpuc.transform.position - transform.position), 5f * Time.deltaTime); // keep looking at the player
-            
-            if(currentAttackTime >= waitAttackTime)//wait one sec and attack
+            //https://www.youtube.com/watch?v=xppompv1DBg&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=11
+
+            if (currentAttackTime >= waitAttackTime)//wait one sec and attack
             {
                 int attackRange = Random.Range(1, 3);
                 anim.SetInteger("Attack", attackRange);
