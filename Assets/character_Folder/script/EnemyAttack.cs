@@ -10,7 +10,6 @@ public class EnemyAttack : MonoBehaviour
     public LayerMask playerLayer;
     bool finishAttack = false;
     private playerHealth playHP;
-    bool isattacking;
     Transform player;
 
     // Start is called before the first frame update
@@ -27,8 +26,8 @@ public class EnemyAttack : MonoBehaviour
         checkIfAttacking();
         if (finishAttack)
         {
-            
             playHP.takeDamage(damage);
+            finishAttack = false;
         }
     }
 

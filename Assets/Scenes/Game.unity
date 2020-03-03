@@ -5495,7 +5495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfclick: 0
 --- !u!114 &238830238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46579,10 +46578,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2096956081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c37c3f1ca546941939753bbc299e77, type: 3}
+  m_Script: {fileID: 11500000, guid: 94000ff9274c63840a2a7c67ae94de1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthImg: {fileID: 0}
 --- !u!195 &2096956083
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -46659,6 +46659,20 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &2096956089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096956081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94000ff9274c63840a2a7c67ae94de1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthImg: {fileID: 0}
 --- !u!1 &2102410412
 GameObject:
   m_ObjectHideFlags: 0
