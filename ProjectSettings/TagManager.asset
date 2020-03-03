@@ -7,6 +7,8 @@ TagManager:
   - NPC1
   - NPC2
   - NPC3
+  - Item
+  - Slot
   layers:
   - Default
   - TransparentFX
