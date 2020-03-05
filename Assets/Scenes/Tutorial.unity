@@ -753,8 +753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec5797701c33fe43ada7dca610c2977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadios: 10
-  target: {fileID: 1383478314}
+  tpuc: {fileID: 0}
+  fov: 120
+  viewDistance: 10
+  wanderRadius: 7
+  waypos: []
+  dragonCurrentState: 0
+  dragonLastState: 0
 --- !u!1 &1383478308 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d98a9384bbcefb942a5a50cbb5d6ec54,
@@ -781,6 +786,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+  m_Animator: {fileID: 0}
 --- !u!114 &1383478310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfclick: 0
 --- !u!136 &1383478312
 CapsuleCollider:
   m_ObjectHideFlags: 0

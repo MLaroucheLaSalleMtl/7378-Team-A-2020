@@ -8,7 +8,7 @@ public class Badger : MonoBehaviour
        
     public Text BadgerName;
     public Image BadgerNameBorder;
-   
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +22,16 @@ public class Badger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 
-            GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
+            //GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
             fadeIn();
+            arrow.SetActive(false);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
-        {
-
-            
+        {            
             fadeOut();
-
         }
     }
 

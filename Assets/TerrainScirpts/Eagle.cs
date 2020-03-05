@@ -7,7 +7,7 @@ public class Eagle : MonoBehaviour
 {
     public Text EagleName;
     public Image EagleNameBorder;
-    public GameObject arrow;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,7 @@ public class Eagle : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             fadeIn();
-            arrow.SetActive(false);
+            GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
         }
     }
 

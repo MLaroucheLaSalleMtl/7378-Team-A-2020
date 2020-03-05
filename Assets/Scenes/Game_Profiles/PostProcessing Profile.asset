@@ -17,25 +17,25 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 0
+    overrideState: 1
     value: 0
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   center:
-    overrideState: 0
+    overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
   smoothness:
-    overrideState: 0
+    overrideState: 1
     value: 0.2
   roundness:
-    overrideState: 0
+    overrideState: 1
     value: 1
   rounded:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mask:
     overrideState: 0
@@ -1418,25 +1418,25 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   filtering:
-    overrideState: 0
+    overrideState: 1
     value: {x: 50, y: 95}
   minLuminance:
-    overrideState: 0
+    overrideState: 1
     value: 0
   maxLuminance:
-    overrideState: 0
+    overrideState: 1
     value: 0
   keyValue:
-    overrideState: 0
+    overrideState: 1
     value: 1
   eyeAdaptation:
-    overrideState: 0
+    overrideState: 1
     value: 0
   speedUp:
-    overrideState: 0
+    overrideState: 1
     value: 2
   speedDown:
-    overrideState: 0
+    overrideState: 1
     value: 1
 --- !u!114 &1068922909767855372
 MonoBehaviour:
@@ -1493,16 +1493,16 @@ MonoBehaviour:
     overrideState: 1
     value: 65472
   diffusion:
-    overrideState: 0
+    overrideState: 1
     value: 7
   anamorphicRatio:
-    overrideState: 0
+    overrideState: 1
     value: 0
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
-    overrideState: 0
+    overrideState: 1
     value: 0
   dirtTexture:
     overrideState: 0
@@ -1605,22 +1605,22 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
   intensityX:
-    overrideState: 0
+    overrideState: 1
     value: 1
   intensityY:
-    overrideState: 0
+    overrideState: 1
     value: 1
   centerX:
-    overrideState: 0
+    overrideState: 1
     value: 0
   centerY:
-    overrideState: 0
+    overrideState: 1
     value: 0
   scale:
-    overrideState: 0
+    overrideState: 1
     value: 1
 --- !u!114 &4286723367665449860
 MonoBehaviour:
@@ -1639,7 +1639,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   preset:
-    overrideState: 0
+    overrideState: 1
     value: 2
   maximumIterationCount:
     overrideState: 0
@@ -1654,10 +1654,10 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   distanceFade:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   vignette:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
 --- !u!114 &5254445084587913624
 MonoBehaviour:
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -1682,8 +1682,8 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   size:
-    overrideState: 0
+    overrideState: 1
     value: 1
   lumContrib:
-    overrideState: 0
+    overrideState: 1
     value: 0.8
