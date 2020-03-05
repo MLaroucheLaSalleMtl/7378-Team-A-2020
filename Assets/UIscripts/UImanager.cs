@@ -8,6 +8,7 @@ public class UImanager : MonoBehaviour
     public GameObject ExitPanel;
     public GameObject SettingPanel;
     public AudioSource ButtonClick;
+    public GameObject StaffPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -69,10 +70,10 @@ public class UImanager : MonoBehaviour
 
     //Turtorial
 
-    public void OpenTutorial()
+    public void OpenStaff()
     {
         ButtonClick.Play();
-        SceneManager.LoadScene("Tutorial");
+        StaffPanel.SetActive(true);
     }
 
 }

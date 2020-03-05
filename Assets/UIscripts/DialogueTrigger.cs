@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private FreeLookCam fc;
     private bool reset = false;
-    
+    bool isDialogue = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,6 +33,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
+            isDialogue = true;
             dialogueBox.SetActive(true);
             FreeLookCam.OnDialogue = true;
                 if (!reset)
