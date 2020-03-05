@@ -24,19 +24,19 @@ public class DialogueManager : MonoBehaviour
     public GameObject BandgerPortal;
     public GameObject AntPortal;
 
-    //To show different path arrow
-    //public GameObject Arrow;
-    //[SerializeField] private Transform Eagle;
-    //[SerializeField] private Transform Ant;
-    //[SerializeField] private Transform Badger;
+    //To play the music when you get a quest
+    //[SerializeField] private AudioSource QuestMusic;
+
 
     // Start is called before the first frame update   
     private void Awake()
     {
         sentences = new Queue<string>();
+        
     }
+   
 
-    
+
     public void StartDialogue(Dialogue dialogue)
     {
        
@@ -71,7 +71,10 @@ public class DialogueManager : MonoBehaviour
         
         //To show the quest panel
         Quest.SetActive(true);
-       
+
+        //To play the quest music
+        //QuestMusic.Play();
+
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
@@ -79,9 +82,7 @@ public class DialogueManager : MonoBehaviour
             EaglePortal.SetActive(true);
             BandgerPortal.SetActive(false);
             AntPortal.SetActive(false);
-            //Vector3 targetPos = Eagle.transform.position;
-            //targetPos.y = transform.position.y;
-            //transform.LookAt(targetPos);
+            
 
         }
         if (id == 2)
@@ -90,9 +91,7 @@ public class DialogueManager : MonoBehaviour
             BandgerPortal.SetActive(true);
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
-            //Vector3 targetPos = Ant.transform.position;
-            //targetPos.y = transform.position.y;
-            //transform.LookAt(targetPos);
+            
         }
         if (id == 3)
         {
@@ -100,9 +99,7 @@ public class DialogueManager : MonoBehaviour
             AntPortal.SetActive(true);
             EaglePortal.SetActive(false);
             BandgerPortal.SetActive(false);
-            //Vector3 targetPos = Badger.transform.position;
-            //targetPos.y = transform.position.y;
-            //transform.LookAt(targetPos);
+           
         }
         
         
