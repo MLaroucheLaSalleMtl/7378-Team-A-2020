@@ -9,6 +9,9 @@ TagManager:
   - NPC3
   - Item
   - Slot
+  - Ghost
+  - Eden
+  - NPC4
   layers:
   - Default
   - TransparentFX
