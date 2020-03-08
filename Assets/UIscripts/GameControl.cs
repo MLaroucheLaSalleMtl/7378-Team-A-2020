@@ -12,7 +12,10 @@ public class GameControl : MonoBehaviour
     public static bool GameIsPause = false;
     private int lastPressed = 0;
     public GameObject player;
-
+    
+    [SerializeField] private Transform ResPoint;
+    [SerializeField] private Transform Deadplayer;
+   
     // Update is called once per frame
     void Update()
     {
@@ -65,5 +68,9 @@ public class GameControl : MonoBehaviour
         SceneManager.LoadScene("UI");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+    public void Respawn()
+    {
+        Deadplayer.transform.position = ResPoint.transform.position;
     }
 }

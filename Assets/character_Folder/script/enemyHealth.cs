@@ -11,11 +11,14 @@ public class enemyHealth : MonoBehaviour
     public GameObject hpp;
     private DragonControl dc;
 
+   
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         isDead = false;
         dc = GetComponent<DragonControl>();
+        
     }
 
     private void Update()
@@ -27,6 +30,7 @@ public class enemyHealth : MonoBehaviour
     }
     public void takeDamage(float damage)
     {
+        
         health -= damage;
         Debug.Log(health);
         if(health <= 0)
