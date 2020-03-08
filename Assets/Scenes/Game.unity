@@ -26826,6 +26826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueBoarPBR 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3344768621123118343, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3344768621123118360, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_Enabled

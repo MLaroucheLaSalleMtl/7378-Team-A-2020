@@ -8,8 +8,10 @@ public class EnemyAttack : MonoBehaviour
     private Animator anim;
     public Transform detectDamage;
     public LayerMask playerLayer;
-    private playerHealth playHP;
+    private playerHealth playerHP;
     Transform player;
+    bool endAttack = true;
+    
     
 
     // Start is called before the first frame update
@@ -17,31 +19,51 @@ public class EnemyAttack : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
-        playHP = player.GetComponent<playerHealth>();
+        playerHP = player.GetComponent<playerHealth>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkIfAttacking();
-    }
-
-   void checkIfAttacking()
-    {
-        if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("BasicAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("HornAttack"))
+        if (endAttack)
         {
-           if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            DealDamage(checkIfAttacking());
+        }
+        else
+        {
+            if(!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
-               playHP.takeDamage(damage);
-            }
-            else
-            {
-                playHP.takeDamage(0);
+                endAttack = true;
             }
         }
     }
 
+   bool checkIfAttacking()
+    {
+        bool isAttacking = false;
+        if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("BasicAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("HornAttack"))
+        {
+           if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f)
+            {
+                isAttacking = true;
+                endAttack = false;
+            }
+        }
+        return isAttacking;
+    }
+
+    void DealDamage(bool isAttacking)
+    {
+        if (isAttacking)
+        {
+            //Debug.Log(Vector3.Distance(transform.position, player.position));
+            if(Vector3.Distance(transform.position, player.position) <= 5f)
+            {
+                playerHP.takeDamage(damage);
+            }
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(detectDamage.position, 0.8f);

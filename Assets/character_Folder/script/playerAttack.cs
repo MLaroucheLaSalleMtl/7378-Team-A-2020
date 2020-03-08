@@ -88,7 +88,7 @@ public class playerAttack : MonoBehaviour
 
         foreach (Collider enemy in touchEnemy)
         {
-            if (numOfclick > 0)
+            if (numOfclick > 0 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
             {
                 enemy.GetComponent<enemyHealth>().takeDamage(damage);
             }
