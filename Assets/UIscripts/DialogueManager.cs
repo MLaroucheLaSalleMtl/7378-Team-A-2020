@@ -18,15 +18,18 @@ public class DialogueManager : MonoBehaviour
     // To show Quest at the left top
     public GameObject Quest;
     public Text questText;
+    public GameObject Pointer;
 
     //Open the different portal
     public GameObject EaglePortal;
     public GameObject BandgerPortal;
     public GameObject AntPortal;
 
-    //To play the music when you get a quest
-    //[SerializeField] private AudioSource QuestMusic;
-
+    //Eliminate the quest mark
+    public GameObject Exclamation1;
+    public GameObject Exclamation2;
+    public GameObject Exclamation3;
+    public GameObject QuestionMark;
 
     // Start is called before the first frame update   
     private void Awake()
@@ -35,8 +38,6 @@ public class DialogueManager : MonoBehaviour
         
     }
    
-
-
     public void StartDialogue(Dialogue dialogue)
     {
        
@@ -71,40 +72,42 @@ public class DialogueManager : MonoBehaviour
         
         //To show the quest panel
         Quest.SetActive(true);
-
-        //To play the quest music
-        //QuestMusic.Play();
-
+      
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
-            questText.text = "Kill the 5 dragons" ;
+            questText.text = "Kill the 3 dragons" ;
             EaglePortal.SetActive(true);
             BandgerPortal.SetActive(false);
             AntPortal.SetActive(false);
-            
+            Exclamation1.SetActive(false);
 
         }
         if (id == 2)
         {
-            questText.text = "Defeat 10 dragons";
+            questText.text = "Defeat 5 dragons";
             BandgerPortal.SetActive(true);
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
-            
+            Exclamation2.SetActive(false);
         }
         if (id == 3)
         {
-            questText.text = "Defeat 15 dragons";
+            questText.text = "Defeat 10 dragons";
             AntPortal.SetActive(true);
             EaglePortal.SetActive(false);
             BandgerPortal.SetActive(false);
-           
+            Exclamation3.SetActive(false);
+        }
+
+        if (id == 4)
+        {
+            questText.text = "Collect xxxx";
+            Pointer.SetActive(true);
+            QuestionMark.SetActive(false);
+            
         }
         
-        
-
-
         
     }
 }

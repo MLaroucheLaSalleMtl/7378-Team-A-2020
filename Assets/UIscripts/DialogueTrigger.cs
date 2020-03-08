@@ -15,6 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     private bool reset = false;
     bool isDialogue = false;
 
+   
     private void OnTriggerEnter(Collider other)
     {
         
@@ -29,11 +30,14 @@ public class DialogueTrigger : MonoBehaviour
             case "NPC3":
                 DialogueManager.id = 3;
                 break;
+            case "NPC4":
+                DialogueManager.id = 4;
+                break;
         }
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player"&&isDialogue==false)
         {
-            isDialogue = true;
+            
             dialogueBox.SetActive(true);
             FreeLookCam.OnDialogue = true;
                 if (!reset)
@@ -46,7 +50,8 @@ public class DialogueTrigger : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 //player.GetComponent<ThirdPersonUserControl>().enabled = false;
                 
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);                   
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            isDialogue = true;
         }
     }
    
