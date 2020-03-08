@@ -100,7 +100,6 @@ public class playerAttack : MonoBehaviour
         if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
         {
             anim.SetInteger("Skill", 1);
-
             canPlaySkill1 = true;
             effect.lighting();
         }

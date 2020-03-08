@@ -61,7 +61,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
-  damageArea: {fileID: 0}
 --- !u!1 &2693373892119514660
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,9 +175,9 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.22
+      minMaxState: 0
+      scalar: 2
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1424,7 +1423,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.8, g: 0.9764706, b: 1, a: 0.654902}
-        key1: {r: 0.67058825, g: 0.61960787, b: 1, a: 0}
+        key1: {r: 0, g: 0.54639816, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0.654902}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0.654902}
@@ -4990,7 +4989,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.35
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
