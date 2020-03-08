@@ -88,7 +88,7 @@ public class playerAttack : MonoBehaviour
 
         foreach (Collider enemy in touchEnemy)
         {
-            if (numOfclick > 0)
+            if (numOfclick > 0 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
             {
                 enemy.GetComponent<enemyHealth>().takeDamage(damage);
             }
@@ -100,7 +100,6 @@ public class playerAttack : MonoBehaviour
         if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
         {
             anim.SetInteger("Skill", 1);
-
             canPlaySkill1 = true;
             effect.lighting();
         }
