@@ -7,7 +7,8 @@ public class Eagle : MonoBehaviour
 {
     public Text EagleName;
     public Image EagleNameBorder;
-    
+    public Transform player;
+    public GameObject arrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,18 +28,15 @@ public class Eagle : MonoBehaviour
         EagleNameBorder.CrossFadeAlpha(1, 2, false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+        Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
         {
+            arrow.SetActive(false);
             fadeIn();
-            GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
+        else
         {
             fadeOut();
         }
