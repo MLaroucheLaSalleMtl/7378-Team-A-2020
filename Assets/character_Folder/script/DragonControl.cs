@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.UI;
 
 public enum dragonState
 {
@@ -47,6 +48,7 @@ public class DragonControl : MonoBehaviour
     private bool finished_Movement = true;
 
     private Vector3 whereTo_Navigate;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -56,12 +58,12 @@ public class DragonControl : MonoBehaviour
 
         initialPos = transform.position;
         whereTo_Navigate = transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if(dragonCurrentState != dragonState.Death)
         {
             dragonCurrentState = SetDragonState(dragonCurrentState, dragonLastState, enemyToPlayerDis);
@@ -208,5 +210,4 @@ public class DragonControl : MonoBehaviour
     }
     
 
-    
 }
