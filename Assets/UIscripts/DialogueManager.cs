@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Quest;
     public Text questText;
     public GameObject Pointer;
+   
 
     //Open the different portal
     public GameObject EaglePortal;
@@ -76,7 +77,7 @@ public class DialogueManager : MonoBehaviour
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
-            questText.text = "Kill the 3 dragons" ;
+            questText.text = "Kill the 2 xxx and find a Teleport Altar";
             EaglePortal.SetActive(true);
             BandgerPortal.SetActive(false);
             AntPortal.SetActive(false);
@@ -93,7 +94,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (id == 3)
         {
-            questText.text = "Defeat 10 dragons";
+            questText.text = "Kill 3 monsters";
             AntPortal.SetActive(true);
             EaglePortal.SetActive(false);
             BandgerPortal.SetActive(false);
@@ -102,7 +103,7 @@ public class DialogueManager : MonoBehaviour
 
         if (id == 4)
         {
-            questText.text = "Collect xxxx";
+            questText.text = "Defeat dragons and xx to get the trigger keys";
             Pointer.SetActive(true);
             QuestionMark.SetActive(false);
             
