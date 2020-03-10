@@ -88,9 +88,13 @@ public class playerAttack : MonoBehaviour
 
         foreach (Collider enemy in touchEnemy)
         {
-            if (numOfclick > 0 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("slash1") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash3") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash4"))
             {
-                enemy.GetComponent<enemyHealth>().takeDamage(damage);
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+                {
+                    Debug.Log("touch");
+                    enemy.GetComponent<enemyHealth>().takeDamage(damage);
+                }
             }
         }
     }
@@ -153,8 +157,6 @@ public class playerAttack : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (attackArea == null)
-            return;
 
         Gizmos.DrawWireSphere(attackArea.position, attackRange);
     }
