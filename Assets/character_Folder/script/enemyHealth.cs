@@ -10,6 +10,7 @@ public class enemyHealth : MonoBehaviour
     public bool isDead;
     public GameObject hpp;
     private DragonControl dc;
+    private Image health_img;
 
    
 
@@ -18,7 +19,15 @@ public class enemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         isDead = false;
         dc = GetComponent<DragonControl>();
-        
+        if(tag == "boss")
+        {
+            health_img = GameObject.Find("boss_hp").GetComponent<Image>();
+        }
+        else
+        {
+            health_img = GameObject.Find("dragon_hp").GetComponent<Image>();
+        }
+        health_img.fillAmount = 1;
     }
 
     private void Update()
@@ -30,9 +39,8 @@ public class enemyHealth : MonoBehaviour
     }
     public void takeDamage(float damage)
     {
-        
         health -= damage;
-        Debug.Log(health);
+        health_img.fillAmount = health / 100f;
         if(health <= 0)
         {
             health = 0;
