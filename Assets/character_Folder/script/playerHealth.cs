@@ -39,7 +39,7 @@ public class playerHealth : MonoBehaviour
 
         health -= damage;
         hpImg.fillAmount = health / 100;
-        Debug.Log(health);
+
         if(health <= 0)
         {
             health = 0;
