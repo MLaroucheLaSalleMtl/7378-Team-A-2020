@@ -7,12 +7,28 @@ public class Ant : MonoBehaviour
 {
     public Text EagleName;
     public Image EagleNameBorder;
-   
+    public GameObject arrow;
+    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
         EagleName.canvasRenderer.SetAlpha(0.0f);
         EagleNameBorder.canvasRenderer.SetAlpha(0.0f);
+    }
+
+    private void Update()
+    {
+        Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
+        {
+
+            arrow.SetActive(false);
+            fadeIn();
+        }
+        else
+        {
+            fadeOut();
+        }
     }
 
     void fadeOut()
@@ -26,22 +42,8 @@ public class Ant : MonoBehaviour
         EagleName.CrossFadeAlpha(1, 2, false);
         EagleNameBorder.CrossFadeAlpha(1, 2, false);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            fadeIn();
-            GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            fadeOut();
+   
 
-        }
-    }
 
 }
