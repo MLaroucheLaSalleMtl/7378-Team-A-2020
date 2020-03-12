@@ -7,9 +7,7 @@ public class DirectionalArrow : MonoBehaviour
     [SerializeField] private Transform Eagle;
     [SerializeField] private Transform Ant;
     [SerializeField] private Transform Badger;
-    [SerializeField] private Transform Eden;
-    [SerializeField] private Transform Ghost;
-
+    
     //Quest mark
     public GameObject arrow;
     

@@ -9,6 +9,7 @@ public class Badger : MonoBehaviour
     public Text BadgerName;
     public Image BadgerNameBorder;
     public GameObject arrow;
+    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,24 +18,20 @@ public class Badger : MonoBehaviour
         BadgerNameBorder.canvasRenderer.SetAlpha(0.0f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+        Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
         {
-
-            //GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
-            fadeIn();
             arrow.SetActive(false);
+            fadeIn();
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {            
+        else
+        {
             fadeOut();
         }
     }
-
+    
     void fadeOut()
     {
         BadgerName.CrossFadeAlpha(0, 2, false);
