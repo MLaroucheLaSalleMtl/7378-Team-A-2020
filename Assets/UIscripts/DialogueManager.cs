@@ -32,11 +32,17 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation3;
     public GameObject QuestionMark;
 
+    //enemy spawner
+    public int amountOfEnemy = 0;
+    public GameObject dragon;
+    private int enemyCount = 5;
+    int xpos;
+    int zpos;
+
     // Start is called before the first frame update   
     private void Awake()
     {
         sentences = new Queue<string>();
-        
     }
    
     public void StartDialogue(Dialogue dialogue)
@@ -86,11 +92,18 @@ public class DialogueManager : MonoBehaviour
         }
         if (id == 2)
         {
-            questText.text = "Defeat 5 dragons";
+            questText.text = "Defeat " + amountOfEnemy + " dragons";
             BandgerPortal.SetActive(true);
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
             Exclamation2.SetActive(false);
+            //while (amountOfEnemy <= 3)
+            //{
+            //    xpos = Random.Range(1, 20);
+            //    zpos = Random.Range(1, 15);
+            //    Instantiate(dragon, new Vector3(xpos, 9, zpos), Quaternion.identity);
+            //    enemyCount++;
+            //}
         }
         if (id == 3)
         {
@@ -106,9 +119,23 @@ public class DialogueManager : MonoBehaviour
             questText.text = "Defeat dragons and xx to get the trigger keys";
             Pointer.SetActive(true);
             QuestionMark.SetActive(false);
-            
         }
         
         
     }
+
+    //IEnumerator enemySpawner()
+    //{
+    //    if(id == 2)
+    //    {
+    //        while (amountOfEnemy <= 5)
+    //        {
+    //            xpos = Random.Range(1, 20);
+    //            zpos = Random.Range(1, 15);
+    //            Instantiate(dragon, new Vector3(xpos, 9, zpos), Quaternion.identity);
+    //            enemyCount++;
+    //        }
+    //    }
+    //    yield return new WaitForSeconds(0.1f);
+    //}
 }
