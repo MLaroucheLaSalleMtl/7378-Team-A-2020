@@ -12,11 +12,12 @@ public class playerAttactEffect : MonoBehaviour
     private float mainTime = 15f;
     private float currentTime;
     bool startCount = false;
+    private float damage;
     //bool increaseDamage = false;
     private void Start()
     {
         currentTime = mainTime;
-        playerAttack.instance.damage = 20;
+        damage = GetComponent<playerAttack>().damage;
     }
     private void Update()
     {
@@ -25,14 +26,14 @@ public class playerAttactEffect : MonoBehaviour
             if (currentTime >= 0f)
             {
                 currentTime -= Time.deltaTime;
-                playerAttack.instance.damage = 25;
+                damage = 25;
                 swordTrail.SetActive(true);
             }
             else if (currentTime <= 0f)
             {
                 currentTime = mainTime;
                 startCount = false;
-                playerAttack.instance.damage = 20;
+                damage = 20;
                 swordTrail.SetActive(false);
             }
         }
