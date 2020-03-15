@@ -11,8 +11,10 @@ public class enemyHealth : MonoBehaviour
     public GameObject hpp;
     private DragonControl dc;
     private Image health_img;
+    public GameObject dialogue;
+    DialogueManager dialoguemanager;
 
-   
+
 
     private void Start()
     {
@@ -28,6 +30,8 @@ public class enemyHealth : MonoBehaviour
             health_img = GameObject.Find("dragon_hp").GetComponent<Image>();
         }
         health_img.fillAmount = 1;
+
+        dialoguemanager = dialogue.GetComponent<DialogueManager>();
     }
 
     private void Update()
@@ -43,6 +47,7 @@ public class enemyHealth : MonoBehaviour
         health_img.fillAmount = health / 100f;
         if(health <= 0)
         {
+            dialoguemanager.amountOfEnemy--;
             health = 0;
             die();
         }
@@ -52,5 +57,6 @@ public class enemyHealth : MonoBehaviour
     {
         dc.dragonCurrentState = dragonState.Death;
         isDead = true;
+        
     }
 }
