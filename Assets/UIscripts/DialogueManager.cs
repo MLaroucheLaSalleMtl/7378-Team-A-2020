@@ -32,12 +32,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation3;
     public GameObject QuestionMark;
 
-    //enemy spawner
-    public int amountOfEnemy = 0;
-    public GameObject dragon;
-    private int enemyCount = 5;
-    int xpos;
-    int zpos;
+    //enemy spawner    
+    
+    
 
     // Start is called before the first frame update   
     private void Awake()
@@ -83,7 +80,7 @@ public class DialogueManager : MonoBehaviour
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
-            questText.text = "Kill the 2 xxx and find a Teleport Altar";
+            questText.text = "Kill the 2 Monsters to acquire a skill";
             EaglePortal.SetActive(true);
             BandgerPortal.SetActive(false);
             AntPortal.SetActive(false);
@@ -92,18 +89,13 @@ public class DialogueManager : MonoBehaviour
         }
         if (id == 2)
         {
-            questText.text = "Defeat " + amountOfEnemy + " dragons";
+           
+            questText.text = "Defeat this huge Monster and get a potion";
             BandgerPortal.SetActive(true);
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
             Exclamation2.SetActive(false);
-            //while (amountOfEnemy <= 3)
-            //{
-            //    xpos = Random.Range(1, 20);
-            //    zpos = Random.Range(1, 15);
-            //    Instantiate(dragon, new Vector3(xpos, 9, zpos), Quaternion.identity);
-            //    enemyCount++;
-            //}
+            
         }
         if (id == 3)
         {
@@ -116,7 +108,7 @@ public class DialogueManager : MonoBehaviour
 
         if (id == 4)
         {
-            questText.text = "Defeat dragons and xx to get the trigger keys";
+            questText.text = "Trigger the boss";
             Pointer.SetActive(true);
             QuestionMark.SetActive(false);
         }
@@ -124,18 +116,5 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    //IEnumerator enemySpawner()
-    //{
-    //    if(id == 2)
-    //    {
-    //        while (amountOfEnemy <= 5)
-    //        {
-    //            xpos = Random.Range(1, 20);
-    //            zpos = Random.Range(1, 15);
-    //            Instantiate(dragon, new Vector3(xpos, 9, zpos), Quaternion.identity);
-    //            enemyCount++;
-    //        }
-    //    }
-    //    yield return new WaitForSeconds(0.1f);
-    //}
+   
 }
