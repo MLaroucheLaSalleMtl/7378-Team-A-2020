@@ -32,11 +32,14 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation3;
     public GameObject QuestionMark;
 
+    //enemy spawner    
+    
+    
+
     // Start is called before the first frame update   
     private void Awake()
     {
         sentences = new Queue<string>();
-        
     }
    
     public void StartDialogue(Dialogue dialogue)
@@ -77,7 +80,7 @@ public class DialogueManager : MonoBehaviour
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
-            questText.text = "Kill the 2 xxx and find a Teleport Altar";
+            questText.text = "Kill the 2 Monsters to acquire a skill";
             EaglePortal.SetActive(true);
             BandgerPortal.SetActive(false);
             AntPortal.SetActive(false);
@@ -86,11 +89,13 @@ public class DialogueManager : MonoBehaviour
         }
         if (id == 2)
         {
-            questText.text = "Defeat 5 dragons";
+           
+            questText.text = "Defeat this huge Monster and get a potion";
             BandgerPortal.SetActive(true);
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
             Exclamation2.SetActive(false);
+            
         }
         if (id == 3)
         {
@@ -103,12 +108,13 @@ public class DialogueManager : MonoBehaviour
 
         if (id == 4)
         {
-            questText.text = "Defeat dragons and xx to get the trigger keys";
+            questText.text = "Trigger the boss";
             Pointer.SetActive(true);
             QuestionMark.SetActive(false);
-            
         }
         
         
     }
+
+   
 }

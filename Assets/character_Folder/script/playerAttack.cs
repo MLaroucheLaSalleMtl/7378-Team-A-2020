@@ -92,7 +92,6 @@ public class playerAttack : MonoBehaviour
             {
                 if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
                 {
-                    Debug.Log("touch");
                     enemy.GetComponent<enemyHealth>().takeDamage(damage);
                 }
             }

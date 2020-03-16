@@ -25,7 +25,6 @@ public class DragonControl : MonoBehaviour
     public float wanderRadius = 7f;
     private Vector3 wanderPoint;
 
-    public Transform[] waypos;
     private int wayposIndex = 0;
 
     private Animator anim;
@@ -48,6 +47,8 @@ public class DragonControl : MonoBehaviour
     private bool finished_Movement = true;
 
     private Vector3 whereTo_Navigate;
+
+    private enemyHealth enemyHP;
     
 
     // Start is called before the first frame update
@@ -58,12 +59,19 @@ public class DragonControl : MonoBehaviour
 
         initialPos = transform.position;
         whereTo_Navigate = transform.position;
-        
+
+        wanderPoint = RandomWanderPoint();
+
+        enemyHP = GetComponent<enemyHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(enemyHP.health <= 0)
+        {
+            dragonCurrentState = dragonState.Death;
+        }
         if(dragonCurrentState != dragonState.Death)
         {
             dragonCurrentState = SetDragonState(dragonCurrentState, dragonLastState, enemyToPlayerDis);
@@ -182,22 +190,13 @@ public class DragonControl : MonoBehaviour
         {
             anim.SetBool("Run", false);
             anim.SetBool("Walk", true);
-
-            if (Vector3.Distance(waypos[wayposIndex].position, transform.position) < 2f)
+            if (Vector3.Distance(transform.position,wanderPoint) < 1.5f)
             {
-                if (wayposIndex == waypos.Length - 1)
-                {
-                    wayposIndex = 0;
-                }
-                else
-                {
-
-                    wayposIndex++;
-                }
+                wanderPoint = RandomWanderPoint();
             }
             else
             {
-                agent.SetDestination(waypos[wayposIndex].position);
+                agent.SetDestination(wanderPoint);
             }
         }
         else
@@ -208,6 +207,16 @@ public class DragonControl : MonoBehaviour
             agent.isStopped = true;
         }
     }
-    
+    public Vector3 RandomWanderPoint()
+    {
+        Vector3 randompoint = (Random.insideUnitSphere * wanderRadius) + transform.position;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randompoint, out hit, wanderRadius, -1);
+        return new Vector3(hit.position.x, transform.position.y, hit.position.z);
+        //dragon wander
+        //https://www.youtube.com/watch?v=U1nPbJZ1hlc&t=230s
+    }
+
+
 
 }
