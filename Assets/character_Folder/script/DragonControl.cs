@@ -190,13 +190,22 @@ public class DragonControl : MonoBehaviour
         {
             anim.SetBool("Run", false);
             anim.SetBool("Walk", true);
-            if (Vector3.Distance(transform.position,wanderPoint) < 1.5f)
+            //if (Vector3.Distance(transform.position,wanderPoint) < 5f)
+            //{
+            //    wanderPoint = RandomWanderPoint();
+            //}
+            //else
+            //{
+            //    agent.SetDestination(wanderPoint);
+            //}
+            if (Vector3.Distance(transform.position, whereTo_Navigate) <= 2f)
             {
-                wanderPoint = RandomWanderPoint();
+                whereTo_Navigate.x = Random.Range(initialPos.x - 5f, initialPos.x + 5f);
+                whereTo_Navigate.z = Random.Range(initialPos.z - 5f, initialPos.z + 5f);
             }
             else
             {
-                agent.SetDestination(wanderPoint);
+                agent.SetDestination(whereTo_Navigate);
             }
         }
         else
