@@ -11,10 +11,11 @@ public class enemyHealth : MonoBehaviour
     public GameObject hpp;
     private DragonControl dc;
     private Image health_img;
-    public GameObject dialogue;
-    DialogueManager dialoguemanager;
 
-
+    //UI       
+    public GameObject FirstQuest;
+    public GameObject SkillPanel;
+    public GameObject BackPortal;
 
     private void Start()
     {
@@ -31,32 +32,38 @@ public class enemyHealth : MonoBehaviour
         }
         health_img.fillAmount = 1;
 
-        dialoguemanager = dialogue.GetComponent<DialogueManager>();
+       
     }
 
     private void Update()
-    {
+    {        
         if (isDead)
-        {
-            Instantiate(hpp, transform.position, transform.rotation);
-        }
+        {           
+            Instantiate(hpp, transform.position, transform.rotation);           
+        }        
     }
     public void takeDamage(float damage)
     {
         health -= damage;
         health_img.fillAmount = health / 100f;
         if(health <= 0)
-        {
-            dialoguemanager.amountOfEnemy--;
+        {            
             health = 0;
             die();
+
+            print("Test");
+            FirstQuest.SetActive(true);
+            SkillPanel.SetActive(true);
+            BackPortal.SetActive(true);
         }
     }
 
     void die()
     {
         dc.dragonCurrentState = dragonState.Death;
-        isDead = true;
-        
+        isDead = true;       
     }
+
+    
+
 }
