@@ -27186,7 +27186,7 @@ PrefabInstance:
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 542.34
+      value: 564.14
       objectReference: {fileID: 0}
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
@@ -27196,7 +27196,7 @@ PrefabInstance:
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 177.07
+      value: 191.76
       objectReference: {fileID: 0}
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
@@ -27241,17 +27241,17 @@ PrefabInstance:
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3344768620309034274, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
@@ -27266,7 +27266,7 @@ PrefabInstance:
     - target: {fileID: 3344768621123118343, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_BaseOffset
-      value: -0.37
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 3344768621123118343, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
@@ -81113,6 +81113,11 @@ PrefabInstance:
       propertyPath: fillSkill2
       value: 
       objectReference: {fileID: 227041448}
+    - target: {fileID: 7877346967428266281, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
+        type: 3}
+      propertyPath: mission1
+      value: 
+      objectReference: {fileID: 1161104722}
     - target: {fileID: 7877346967428266282, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: inventory
