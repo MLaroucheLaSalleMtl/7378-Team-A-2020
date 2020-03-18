@@ -12,7 +12,7 @@ public class Badger : MonoBehaviour
     public Transform player;
 
     public GameObject FirstQuest;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,7 @@ public class Badger : MonoBehaviour
             fadeOut();
             FirstQuest.SetActive(false);
             //arrow.SetActive(false);
+           
         }
     }
     

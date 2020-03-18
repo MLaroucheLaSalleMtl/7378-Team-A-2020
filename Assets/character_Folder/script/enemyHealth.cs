@@ -13,10 +13,13 @@ public class enemyHealth : MonoBehaviour
     private Image health_img;
 
     //UI       
-    public GameObject FirstQuest;
+    public GameObject FinishQuestPanel;
     public GameObject SkillPanel;
     public GameObject BackPortal;
+    public GameObject BackPortalForAnt;
+    public GameObject BackPortalForEagle;
 
+    public GameObject PointerForCollection;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -51,10 +54,40 @@ public class enemyHealth : MonoBehaviour
             health = 0;
             die();
 
-            print("Test");
-            FirstQuest.SetActive(true);
-            SkillPanel.SetActive(true);
-            BackPortal.SetActive(true);
+            if (DialogueManager.id == 1)
+            {
+                //Eagle
+                FinishQuestPanel.SetActive(true);                
+                
+                SkillPanel.SetActive(true);
+                BackPortalForAnt.SetActive(false);
+                BackPortal.SetActive(false);
+                BackPortalForEagle.SetActive(true);
+               
+            }
+            if (DialogueManager.id == 2)
+            {
+                //Bandger
+                FinishQuestPanel.SetActive(true);                
+                SkillPanel.SetActive(true);
+                BackPortal.SetActive(true);
+                BackPortalForAnt.SetActive(false);
+                BackPortalForEagle.SetActive(false);
+               
+            }
+            if (DialogueManager.id == 3)
+            {
+                //Ant
+                FinishQuestPanel.SetActive(true);                
+                BackPortalForAnt.SetActive(true);
+                BackPortalForEagle.SetActive(false);
+                BackPortal.SetActive(false);
+                SkillPanel.SetActive(true);
+
+                PointerForCollection.SetActive(true);
+
+            }
+           
         }
     }
 

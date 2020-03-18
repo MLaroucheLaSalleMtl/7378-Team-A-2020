@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
-            questText.text = "Kill the 2 Monsters to acquire a skill";
+            questText.text = "Kill the some Monsters to acquire a skill";
             EaglePortal.SetActive(true);
             BandgerPortal.SetActive(false);
             AntPortal.SetActive(false);
@@ -90,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         if (id == 2)
         {
            
-            questText.text = "Defeat this huge Monster and get a potion";
+            questText.text = "Defeat some Monsters and acquire a skill";
             BandgerPortal.SetActive(true);
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
@@ -99,7 +99,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (id == 3)
         {
-            questText.text = "Kill 3 monsters";
+            questText.text = "Kill some monsters and ready for final battle !";
             AntPortal.SetActive(true);
             EaglePortal.SetActive(false);
             BandgerPortal.SetActive(false);
