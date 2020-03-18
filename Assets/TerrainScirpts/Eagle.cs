@@ -9,6 +9,10 @@ public class Eagle : MonoBehaviour
     public Image EagleNameBorder;
     public Transform player;
     public GameObject arrow;
+
+    public GameObject secondQuest;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,8 @@ public class Eagle : MonoBehaviour
         else
         {
             fadeOut();
+            secondQuest.SetActive(false);
+            
         }
     }
 

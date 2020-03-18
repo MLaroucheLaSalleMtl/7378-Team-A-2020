@@ -9,6 +9,9 @@ public class Ant : MonoBehaviour
     public Image EagleNameBorder;
     public GameObject arrow;
     public Transform player;
+
+    public GameObject thirdQuest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,8 @@ public class Ant : MonoBehaviour
         else
         {
             fadeOut();
+            thirdQuest.SetActive(false);
+           
         }
     }
 
