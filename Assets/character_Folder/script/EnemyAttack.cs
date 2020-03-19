@@ -6,7 +6,6 @@ public class EnemyAttack : MonoBehaviour
 {
     public float damage = 10f;
     private Animator anim;
-    public Transform detectDamage;
     public LayerMask playerLayer;
     private playerHealth playerHP;
     Transform player;
@@ -64,10 +63,10 @@ public class EnemyAttack : MonoBehaviour
             }
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(detectDamage.position, 0.8f);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(detectDamage.position, 0.8f);
+    //}
 
     
 }
