@@ -198,10 +198,10 @@ public class DragonControl : MonoBehaviour
             //{
             //    agent.SetDestination(wanderPoint);
             //}
-            if (Vector3.Distance(transform.position, whereTo_Navigate) <= 2f)
+            if (Vector3.Distance(transform.position, whereTo_Navigate) <= 5f)
             {
-                whereTo_Navigate.x = Random.Range(initialPos.x - 5f, initialPos.x + 5f);
-                whereTo_Navigate.z = Random.Range(initialPos.z - 5f, initialPos.z + 5f);
+                whereTo_Navigate.x = Random.Range(initialPos.x - 10f, initialPos.x + 10f);
+                whereTo_Navigate.z = Random.Range(initialPos.z - 10f, initialPos.z + 10f);
             }
             else
             {
