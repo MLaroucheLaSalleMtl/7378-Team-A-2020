@@ -14,7 +14,8 @@ public class enemyHealth : MonoBehaviour
 
     //UI       
     public GameObject FinishQuestPanel;
-    public GameObject SkillPanel;
+    public GameObject skill1;
+    public GameObject skill2;
     public GameObject BackPortal;
     public GameObject BackPortalForAnt;
     public GameObject BackPortalForEagle;
@@ -57,9 +58,8 @@ public class enemyHealth : MonoBehaviour
             if (DialogueManager.id == 1)
             {
                 //Eagle
-                FinishQuestPanel.SetActive(true);                
-                
-                SkillPanel.SetActive(true);
+                skill1.SetActive(true);
+                FinishQuestPanel.SetActive(true);       
                 BackPortalForAnt.SetActive(false);
                 BackPortal.SetActive(false);
                 BackPortalForEagle.SetActive(true);
@@ -68,8 +68,8 @@ public class enemyHealth : MonoBehaviour
             if (DialogueManager.id == 2)
             {
                 //Bandger
-                FinishQuestPanel.SetActive(true);                
-                SkillPanel.SetActive(true);
+                skill2.SetActive(true);
+                FinishQuestPanel.SetActive(true);     
                 BackPortal.SetActive(true);
                 BackPortalForAnt.SetActive(false);
                 BackPortalForEagle.SetActive(false);
@@ -82,7 +82,6 @@ public class enemyHealth : MonoBehaviour
                 BackPortalForAnt.SetActive(true);
                 BackPortalForEagle.SetActive(false);
                 BackPortal.SetActive(false);
-                SkillPanel.SetActive(true);
 
                 PointerForCollection.SetActive(true);
 
