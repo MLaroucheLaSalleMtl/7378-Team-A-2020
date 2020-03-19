@@ -30,6 +30,8 @@ public class playerAttack : MonoBehaviour
     private playerAttactEffect effect;
 
     public static playerAttack instance;
+    public GameObject skill1;
+    public GameObject skill2;
 
     public GameObject mission1;
     // Start is called before the first frame update
@@ -102,32 +104,38 @@ public class playerAttack : MonoBehaviour
 
     public void Skill1(InputAction.CallbackContext context)
     {
-        if (mission1.activeInHierarchy)
+        if (skill1.activeInHierarchy)
         {
-            if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+            if (mission1.activeInHierarchy)
             {
-                anim.SetInteger("Skill", 1);
-                canPlaySkill1 = true;
-                effect.lighting();
-            }
-            else
-            {
-                anim.SetInteger("Skill", 0);
+                if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+                {
+                    anim.SetInteger("Skill", 1);
+                    canPlaySkill1 = true;
+                    effect.lighting();
+                }
+                else
+                {
+                    anim.SetInteger("Skill", 0);
+                }
             }
         }
     }
 
     public void Skill2(InputAction.CallbackContext context)
     {
-        if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+        if (skill2.activeInHierarchy)
         {
-            anim.SetInteger("Skill", 2);
-            canPlaySkill2 = true;
-            effect.magicCircle();
-        }
-        else
-        {
-            anim.SetInteger("Skill", 0);
+            if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+            {
+                anim.SetInteger("Skill", 2);
+                canPlaySkill2 = true;
+                effect.magicCircle();
+            }
+            else
+            {
+                anim.SetInteger("Skill", 0);
+            }
         }
     }
 
