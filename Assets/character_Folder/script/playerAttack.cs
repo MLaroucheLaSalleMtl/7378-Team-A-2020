@@ -13,7 +13,7 @@ public class playerAttack : MonoBehaviour
     public int numOfclick = 0;
     float lastClickTime = 0;
     float maxDelay = 1f;
-    public float damage;
+    public float damage = 20f;
 
     bool Fire = false;
 
@@ -88,18 +88,18 @@ public class playerAttack : MonoBehaviour
 
 
         //Collider[] touchEnemy = Physics.OverlapCapsule(start.position, end.position, 0.2f, enemylayer);
-        Collider[] touchEnemy = Physics.OverlapSphere(attackArea.position, attackRange, enemylayer);//collects the gameobject with layer "enemy"
+        //Collider[] touchEnemy = Physics.OverlapSphere(attackArea.position, attackRange, enemylayer);//collects the gameobject with layer "enemy"
 
-        foreach (Collider enemy in touchEnemy)
-        {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("slash1") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash3") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash4"))
-            {
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
-                {
-                    enemy.GetComponent<enemyHealth>().takeDamage(damage);
-                }
-            }
-        }
+        //foreach (Collider enemy in touchEnemy)
+        //{
+        //    if (anim.GetCurrentAnimatorStateInfo(0).IsName("slash1") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash3") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash4"))
+        //    {
+        //        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        //        {
+        //            enemy.GetComponent<enemyHealth>().takeDamage(damage);
+        //        }
+        //    }
+        //}
     }
 
     public void Skill1(InputAction.CallbackContext context)
@@ -168,7 +168,6 @@ public class playerAttack : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-
         Gizmos.DrawWireSphere(attackArea.position, attackRange);
     }
 
