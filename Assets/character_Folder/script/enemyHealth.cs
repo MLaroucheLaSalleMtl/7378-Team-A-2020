@@ -8,10 +8,9 @@ public class enemyHealth : MonoBehaviour
     public float health = 100;
     private Animator anim;
     public bool isDead;
-    //public GameObject hpp;
+    public GameObject hpp;
     private DragonControl dc;
-    public GameObject health_img;
-    public bool isDestroy =false;
+    private Image health_img;
 
     //UI       
     public GameObject FinishQuestPanel;
@@ -29,32 +28,28 @@ public class enemyHealth : MonoBehaviour
         dc = GetComponent<DragonControl>();
         if(tag == "boss")
         {
-            health_img = GameObject.Find("boss_hp");
+            health_img = GameObject.Find("boss_hp").GetComponent<Image>();
         }
         else
         {
-            health_img = GameObject.Find("dragon_hp");
+            health_img = GameObject.Find("dragon_hp").GetComponent<Image>();
         }
-        health_img.GetComponent<Image>().fillAmount = 1;
+        health_img.fillAmount = 1;
+
+       
     }
 
     private void Update()
     {        
-        //if (isDead && isDestroy)
-        //{           
-        //    Instantiate(hpp, transform.position, Quaternion.identity);
-        //}
-        //else
-        //{
-        //    isDestroy = false;
-        //}
+        if (isDead)
+        {           
+            Instantiate(hpp, transform.position, transform.rotation);           
+        }        
     }
     public void takeDamage(float damage)
     {
         health -= damage;
-        health_img.GetComponent<Image>().fillAmount -= health / 100;
-        
-        //Debug.Log(health);
+        health_img.fillAmount = health / 100f;
         if(health <= 0)
         {            
             health = 0;

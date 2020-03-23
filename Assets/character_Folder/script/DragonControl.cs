@@ -98,7 +98,6 @@ public class DragonControl : MonoBehaviour
             if(!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Die") &&anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95)// 1 is the end of animation
             {
                 Destroy(gameObject, 2f);
-                enemyHP.isDestroy = true;
             }
         }
     }
