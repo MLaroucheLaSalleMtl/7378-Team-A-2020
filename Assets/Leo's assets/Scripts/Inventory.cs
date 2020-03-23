@@ -34,6 +34,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {//make sure it switches between enabled and unenabled (open and close)
             inventoryEnabled = !inventoryEnabled;
+            Cursor.visible = true;
         }
         if (inventoryEnabled == true)
         {//if inventory is not opened, this makes sure to open the inventory
