@@ -10,6 +10,7 @@ public class UImanager : MonoBehaviour
     public AudioSource ButtonClick;
     public GameObject StaffPanel;
 
+    public GameObject ReturnButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +75,14 @@ public class UImanager : MonoBehaviour
     {
         ButtonClick.Play();
         StaffPanel.SetActive(true);
+        ReturnButton.SetActive(true);
+    }
+
+    public void CloseStaff()
+    {
+        ButtonClick.Play();
+        StaffPanel.SetActive(false);
+        ReturnButton.SetActive(false);
     }
 
 }
