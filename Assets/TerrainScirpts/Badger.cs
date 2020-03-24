@@ -12,13 +12,15 @@ public class Badger : MonoBehaviour
     public Transform player;
 
     public GameObject FirstQuest;
-    
+    public AudioSource AttackMusic;
+
     // Start is called before the first frame update
     void Start()
     {
         
         BadgerName.canvasRenderer.SetAlpha(0.0f);
         BadgerNameBorder.canvasRenderer.SetAlpha(0.0f);
+        AttackMusic = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -27,14 +29,16 @@ public class Badger : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
         {          
             fadeIn();
-            arrow.SetActive(false);           
+            arrow.SetActive(false);
+            AttackMusic.Play();
+            //GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
         }
         else 
         {
             fadeOut();
             FirstQuest.SetActive(false);
             //arrow.SetActive(false);
-           
+            
         }
     }
     
