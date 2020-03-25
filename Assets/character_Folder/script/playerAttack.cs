@@ -13,14 +13,14 @@ public class playerAttack : MonoBehaviour
     public int numOfclick = 0;
     float lastClickTime = 0;
     float maxDelay = 1f;
-    public float damage;
+    public float damage = 20;
 
     bool Fire = false;
 
     //public Transform start;
     //public Transform end;
     public Transform attackArea;
-    public float attackRange = 0.5f;
+    public float attackRange = 0.8f;
 
     public LayerMask enemylayer; //in order to seperate boss and normal enemy
 
@@ -166,9 +166,8 @@ public class playerAttack : MonoBehaviour
     }
 
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
-
         Gizmos.DrawWireSphere(attackArea.position, attackRange);
     }
 
