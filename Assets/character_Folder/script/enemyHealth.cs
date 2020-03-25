@@ -32,10 +32,10 @@ public class enemyHealth : MonoBehaviour
         }
         else
         {
-            health_img = GameObject.Find("dragon_hp").GetComponent<Image>();
+            //health_img = GameObject.Find("dragon_hp").GetComponent<Image>();
+            health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
         }
         health_img.fillAmount = 1;
-
        
     }
 
@@ -50,7 +50,8 @@ public class enemyHealth : MonoBehaviour
     {
         health -= damage;
         health_img.fillAmount = health / 100f;
-        if(health <= 0)
+        Debug.Log(health_img.fillAmount);
+        if (health <= 0)
         {            
             health = 0;
             die();

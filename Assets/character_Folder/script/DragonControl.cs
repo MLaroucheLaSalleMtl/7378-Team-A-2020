@@ -202,6 +202,7 @@ public class DragonControl : MonoBehaviour
             {
                 whereTo_Navigate.x = Random.Range(initialPos.x - 10f, initialPos.x + 10f);
                 whereTo_Navigate.z = Random.Range(initialPos.z - 10f, initialPos.z + 10f);
+                //get idea from https://www.youtube.com/watch?v=Puqupldb4yc
             }
             else
             {
