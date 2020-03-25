@@ -432,7 +432,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8152144769457083414}
-  - {fileID: 1486520609957591153}
   m_Father: {fileID: 3685514092473698040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -500,6 +499,7 @@ Transform:
   - {fileID: 8487333299520072325}
   - {fileID: 3685514092473698040}
   - {fileID: 2171941589178439906}
+  - {fileID: 1486520609957591153}
   m_Father: {fileID: 4734923347552648307}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5868,14 +5868,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3424978642556937034}
-  m_LocalRotation: {x: -0, y: -0.10760795, z: -0, w: 0.9941934}
-  m_LocalPosition: {x: -0.685, y: -1.42, z: -0.088}
+  m_LocalRotation: {x: -0, y: -0.10760796, z: -0, w: 0.99419343}
+  m_LocalPosition: {x: -0.62779164, y: -1.4516681, z: -0.051758714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2193279692514358737}
   - {fileID: 2193279693460901457}
-  m_Father: {fileID: 4252320988870670435}
-  m_RootOrder: 1
+  m_Father: {fileID: 2085595982760920122}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -12.3550005, z: 0}
 --- !u!23 &3424978642556937031
 MeshRenderer:
@@ -7260,6 +7260,9 @@ MonoBehaviour:
     m_Bits: 1024
   canPlaySkill1: 0
   canPlaySkill2: 0
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
+  mission1: {fileID: 0}
 --- !u!114 &7877346967428266280
 MonoBehaviour:
   m_ObjectHideFlags: 0
