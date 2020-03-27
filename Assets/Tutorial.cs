@@ -14,6 +14,7 @@ public class Tutorial : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         GameIsPause = true;
+        TutorialPanel.SetActive(true);
     }
 
     // Update is called once per frame
@@ -29,5 +30,6 @@ public class Tutorial : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         TutorialPanel.SetActive(false);
+        
     }
 }

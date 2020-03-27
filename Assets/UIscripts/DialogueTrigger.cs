@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private FreeLookCam fc;
     private bool reset = false;
-    bool isDialogue = false;
+    public bool isDialogue = false;
 
    
     private void OnTriggerEnter(Collider other)
@@ -35,21 +35,14 @@ public class DialogueTrigger : MonoBehaviour
                 break;
         }
 
-        if (other.gameObject.tag == "Player"&&isDialogue==false)
+        if (other.gameObject.tag == "Player" && isDialogue == false)
         {
             
             dialogueBox.SetActive(true);
             FreeLookCam.OnDialogue = true;
-                if (!reset)
-                {                
-                    
-                GameObject.FindWithTag("Player").GetComponent<Animator>().enabled = false;
-                reset = true;
-                }
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                //player.GetComponent<ThirdPersonUserControl>().enabled = false;
-                
+            GameObject.FindWithTag("Player").GetComponent<playerAttack>().CanAttack = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;               
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             isDialogue = true;
         }
@@ -57,7 +50,7 @@ public class DialogueTrigger : MonoBehaviour
    
     private void OnTriggerExit(Collider other)
     {
-        reset = false;                                 
+        GameObject.FindWithTag("Player").GetComponent<playerAttack>().CanAttack = true;
     }
 
     

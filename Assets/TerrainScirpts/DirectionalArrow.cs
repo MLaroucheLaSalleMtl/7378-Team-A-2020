@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class DirectionalArrow : MonoBehaviour
 {
-    [SerializeField] private Transform Eagle;
-    [SerializeField] private Transform Ant;
-    [SerializeField] private Transform Badger;
-    
+    public Transform Eagle;
+    public Transform Ant;
+    public Transform Badger;
+   
     //Quest mark
     public GameObject arrow;
     
-    private void Update()
+    public void Update()
     {
+        print(DialogueManager.id);
         if (DialogueManager.id == 1)
         {
             Vector3 targetPos = Eagle.transform.position;
             targetPos.y = transform.position.y;
             transform.LookAt(targetPos);
-
+            
             arrow.SetActive(true);
         }
         if (DialogueManager.id == 2)
@@ -35,6 +36,7 @@ public class DirectionalArrow : MonoBehaviour
             targetPos.y = transform.position.y;
             transform.LookAt(targetPos);
         }
+        
         
 
     }

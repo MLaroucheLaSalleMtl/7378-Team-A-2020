@@ -14,6 +14,7 @@ public class Badger : MonoBehaviour
     public GameObject FirstQuest;
     public AudioSource AttackMusic;
 
+    public bool isOutside = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,17 +28,16 @@ public class Badger : MonoBehaviour
     {
 
         if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
-        {          
+        {
+            DialogueManager.id = 0;
             fadeIn();
             arrow.SetActive(false);
-            AttackMusic.Play();
-            //GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
+            
         }
-        else 
+        if(Vector3.Distance(transform.position, player.transform.position) > 50f)
         {
             fadeOut();
             FirstQuest.SetActive(false);
-            //arrow.SetActive(false);
             
         }
     }
@@ -55,4 +55,20 @@ public class Badger : MonoBehaviour
         
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            AttackMusic.Play();
+            GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
+            
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        AttackMusic.Stop();
+        GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Play();
+       
+    }
 }

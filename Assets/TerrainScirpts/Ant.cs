@@ -11,12 +11,14 @@ public class Ant : MonoBehaviour
     public Transform player;
 
     public GameObject thirdQuest;
+    public AudioSource AttackMusic;
 
     // Start is called before the first frame update
     void Start()
     {
         EagleName.canvasRenderer.SetAlpha(0.0f);
         EagleNameBorder.canvasRenderer.SetAlpha(0.0f);
+        AttackMusic = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -24,7 +26,7 @@ public class Ant : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
         {
-
+            DialogueManager.id = 6;
             arrow.SetActive(false);
             fadeIn();
         }
@@ -48,7 +50,20 @@ public class Ant : MonoBehaviour
         EagleNameBorder.CrossFadeAlpha(1, 2, false);
     }
 
-   
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            AttackMusic.Play();
+            GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        AttackMusic.Stop();
+        GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Play();
+    }
 
 
 }

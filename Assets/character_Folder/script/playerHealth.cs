@@ -18,7 +18,10 @@ public class playerHealth : MonoBehaviour
     public Text DeadText;
     public Text DeadHint;
     public GameObject player;
-    
+
+    public GameObject FirstPanel;
+    public GameObject SecondPanel;
+    public GameObject ThridPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -53,8 +56,11 @@ public class playerHealth : MonoBehaviour
            
             //To stop other music
             GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
-           
-            //----- 
+
+            //The mission panel will be disappeared
+            FirstPanel.SetActive(false);
+            SecondPanel.SetActive(false);
+            ThridPanel.SetActive(false);
 
         }
     }
