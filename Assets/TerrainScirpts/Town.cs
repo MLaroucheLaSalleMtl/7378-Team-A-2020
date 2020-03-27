@@ -22,15 +22,16 @@ public class Town : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
-        {
-           
+        {        
             TownMusic.Play();
             fadeIn();
             wait();
             ThemeMusic.Stop();
+
+            
         }
        
     }
