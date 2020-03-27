@@ -32,8 +32,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation3;
     public GameObject QuestionMark;
 
-    //enemy spawner    
-    
+    //arrow 
+    public GameObject arrow;
     
 
     // Start is called before the first frame update   
@@ -76,7 +76,8 @@ public class DialogueManager : MonoBehaviour
         
         //To show the quest panel
         Quest.SetActive(true);
-      
+
+       
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
@@ -95,6 +96,7 @@ public class DialogueManager : MonoBehaviour
             AntPortal.SetActive(false);
             EaglePortal.SetActive(false);
             Exclamation2.SetActive(false);
+
             
         }
         if (id == 3)
@@ -115,6 +117,4 @@ public class DialogueManager : MonoBehaviour
         
         
     }
-
-   
 }

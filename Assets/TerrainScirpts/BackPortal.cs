@@ -6,7 +6,7 @@ public class BackPortal : MonoBehaviour
 {
     public Transform  backTown;
     public GameObject QuestPanel;
-    public GameObject arrow;
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +14,7 @@ public class BackPortal : MonoBehaviour
         {
             other.gameObject.transform.position = backTown.position;
             QuestPanel.SetActive(false);
-            arrow.SetActive(false);
+            //GameObject.Find("ArrowManager").GetComponent<DirectionalArrow>().arrow.SetActive(false);
         }
 
     }

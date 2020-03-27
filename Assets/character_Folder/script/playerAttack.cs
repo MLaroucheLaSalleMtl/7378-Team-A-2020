@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class playerAttack : MonoBehaviour
 {
+    public bool CanAttack;
     public Image fillSkill1;
     public Image fillSkill2;
 
@@ -40,6 +41,7 @@ public class playerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         effect = GetComponent<playerAttactEffect>();
         instance = this;
+        CanAttack = true;
     }
 
     // Update is called once per frame
@@ -61,30 +63,34 @@ public class playerAttack : MonoBehaviour
         {
             fadeInOut(fillSkill2, 1f);
         }
+        print(CanAttack);
     }
 
     public void onAttack(InputAction.CallbackContext context)
     {
+        if(CanAttack)
+        {
+            if (Fire = context.performed)
+            {
+                lastClickTime = Time.time;
+                numOfclick++;
+            }
+
+            if (numOfclick >= 1)
+            {
+                anim.SetBool("A1", true);
+            }
+            if (numOfclick >= 2)
+            {
+                anim.SetBool("A2", true);
+            }
+            if (numOfclick >= 3)
+            {
+                anim.SetBool("A3", true);
+            }
+        }          
         //Fire = context.performed;
         //anim.SetBool("Attack1", Fire);
-        if (Fire = context.performed)
-        {
-            lastClickTime = Time.time;
-            numOfclick++;
-        }
-
-        if (numOfclick >= 1)
-        {
-            anim.SetBool("A1", true);
-        }
-        if (numOfclick >= 2)
-        {
-            anim.SetBool("A2", true);
-        }
-        if (numOfclick >= 3)
-        {
-            anim.SetBool("A3", true);
-        }
 
 
         //Collider[] touchEnemy = Physics.OverlapCapsule(start.position, end.position, 0.2f, enemylayer);

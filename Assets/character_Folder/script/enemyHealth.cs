@@ -21,6 +21,8 @@ public class enemyHealth : MonoBehaviour
     public GameObject BackPortalForEagle;
 
     public GameObject PointerForCollection;
+    public GameObject PointerForBoss;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -56,7 +58,8 @@ public class enemyHealth : MonoBehaviour
             health = 0;
             die();
 
-            if (DialogueManager.id == 1)
+           
+            if (DialogueManager.id == 5)
             {
                 //Eagle
                 skill1.SetActive(true);
@@ -64,9 +67,10 @@ public class enemyHealth : MonoBehaviour
                 BackPortalForAnt.SetActive(false);
                 BackPortal.SetActive(false);
                 BackPortalForEagle.SetActive(true);
+
                
             }
-            if (DialogueManager.id == 2)
+            if (DialogueManager.id == 0)
             {
                 //Bandger
                 skill2.SetActive(true);
@@ -74,9 +78,10 @@ public class enemyHealth : MonoBehaviour
                 BackPortal.SetActive(true);
                 BackPortalForAnt.SetActive(false);
                 BackPortalForEagle.SetActive(false);
-               
+
+                
             }
-            if (DialogueManager.id == 3)
+            if (DialogueManager.id == 6)
             {
                 //Ant
                 FinishQuestPanel.SetActive(true);                
@@ -85,7 +90,7 @@ public class enemyHealth : MonoBehaviour
                 BackPortal.SetActive(false);
 
                 PointerForCollection.SetActive(true);
-
+                PointerForBoss.SetActive(true);
             }
            
         }
