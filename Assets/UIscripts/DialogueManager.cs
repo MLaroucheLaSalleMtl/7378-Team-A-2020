@@ -32,22 +32,27 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation3;
     public GameObject QuestionMark;
 
-    //arrow 
-    public GameObject arrow;
+    //Music For Collection
+    public AudioSource AccpetMusic;
     
-
     // Start is called before the first frame update   
     private void Awake()
     {
         sentences = new Queue<string>();
+        
     }
-   
+    private void Update()
+    {
+        AccpetMusic = GetComponent<AudioSource>();
+       
+    }
+
     public void StartDialogue(Dialogue dialogue)
     {
-       
+        AccpetMusic.Play();
         Quest.SetActive(false);
         sentences.Clear();
-        
+       
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -76,8 +81,8 @@ public class DialogueManager : MonoBehaviour
         
         //To show the quest panel
         Quest.SetActive(true);
+        
 
-       
         //To identify which npc will lead to different conditions
         if (id == 1)
         {
@@ -87,6 +92,7 @@ public class DialogueManager : MonoBehaviour
             AntPortal.SetActive(false);
             Exclamation1.SetActive(false);
 
+            
         }
         if (id == 2)
         {
@@ -110,7 +116,7 @@ public class DialogueManager : MonoBehaviour
 
         if (id == 4)
         {
-            questText.text = "Trigger the boss";
+            questText.text = "Collect 3 Stamina Potions";
             Pointer.SetActive(true);
             QuestionMark.SetActive(false);
         }
