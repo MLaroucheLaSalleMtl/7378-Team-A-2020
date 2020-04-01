@@ -13,7 +13,7 @@ public class DirectionalArrow : MonoBehaviour
     
     public void Update()
     {
-        print(DialogueManager.id);
+
         if (DialogueManager.id == 1)
         {
             Vector3 targetPos = Eagle.transform.position;

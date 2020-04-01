@@ -49,11 +49,12 @@ public class DragonControl : MonoBehaviour
     private Vector3 whereTo_Navigate;
 
     private enemyHealth enemyHP;
-    
 
+    
     // Start is called before the first frame update
     void Start()
     {
+       
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
@@ -68,7 +69,8 @@ public class DragonControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyHP.health <= 0)
+        
+        if (enemyHP.health <= 0)
         {
             dragonCurrentState = dragonState.Death;
         }

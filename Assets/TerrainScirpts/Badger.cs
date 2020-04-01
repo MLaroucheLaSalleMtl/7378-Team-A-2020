@@ -14,7 +14,6 @@ public class Badger : MonoBehaviour
     public GameObject FirstQuest;
     public AudioSource AttackMusic;
 
-    public bool isOutside = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +67,7 @@ public class Badger : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         AttackMusic.Stop();
-        GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Play();
+        
        
     }
 }
