@@ -115,7 +115,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -211,7 +211,7 @@
                 {
                     "name": "",
                     "id": "3ea4d645-4504-4529-b061-ab81934c3752",
-                    "path": "<DualShockGamepad>/leftStick",
+                    "path": "<Joystick>/stick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
@@ -225,7 +225,7 @@
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": ";Gamepad",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -235,8 +235,8 @@
                     "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
                     "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.1,y=0.1)",
-                    "groups": "Keyboard&Mouse;Touch;Gamepad",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse;Touch",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -255,7 +255,7 @@
                 {
                     "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<DualShockGamepad>/buttonWest",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -354,7 +354,7 @@
                 {
                     "name": "",
                     "id": "b3b75e7c-c865-4293-8ae8-01c8e00c5fc0",
-                    "path": "<DualShockGamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -376,7 +376,7 @@
                 {
                     "name": "",
                     "id": "3fad014c-275c-4b8a-adb2-0cf4b885172e",
-                    "path": "<DualShockGamepad>/leftTrigger",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -419,17 +419,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8e09ac08-2b55-4dfc-ab31-d067abf5aac1",
-                    "path": "<DualShockGamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d2e26e5d-86b6-4c51-8451-d6b41bbd621e",
                     "path": "<Keyboard>/x",
                     "interactions": "",
@@ -464,7 +453,7 @@
                 {
                     "name": "",
                     "id": "36000512-c040-4751-89c0-658dd9d9b93a",
-                    "path": "<DualShockGamepad>/dpad/up",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -486,7 +475,7 @@
                 {
                     "name": "",
                     "id": "fc9913f7-aa6e-4db3-8bce-d765c72ff676",
-                    "path": "<DualShockGamepad>/dpad/left",
+                    "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
