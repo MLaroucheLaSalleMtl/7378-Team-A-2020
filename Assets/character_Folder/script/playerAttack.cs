@@ -63,7 +63,6 @@ public class playerAttack : MonoBehaviour
         {
             fadeInOut(fillSkill2, 1f);
         }
-       
     }
 
     public void onAttack(InputAction.CallbackContext context)

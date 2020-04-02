@@ -50,7 +50,6 @@ public class playerHealth : MonoBehaviour
 
     public void takeDamage(float damage)
     {
-        
 
         health -= damage;
         hpImg.fillAmount = health / 100;
