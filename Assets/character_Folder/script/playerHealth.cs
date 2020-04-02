@@ -31,7 +31,7 @@ public class playerHealth : MonoBehaviour
     public GameObject PointerForBoss;
     public GameObject BossPanel;
     public GameObject Pointer;
-    //Music forCollecting
+    public GameObject BossDoor;
     
     // Start is called before the first frame update
     void Start()
@@ -91,7 +91,12 @@ public class playerHealth : MonoBehaviour
         if(other.gameObject.tag == "Item")
         {
             Destroy(other.gameObject);
-            hpImg.fillAmount += 1;
+            health += 40;
+            hpImg.fillAmount = health / 100;
+            if (health >= 100)
+            {
+                health = 100;
+            }
             print("Lives added");
 
             LivesAdd.Play();
@@ -111,6 +116,7 @@ public class playerHealth : MonoBehaviour
                 PointerForBoss.SetActive(true);
                 BossPanel.SetActive(true);
                 Pointer.SetActive(false);
+                BossDoor.SetActive(true);
             }
         }
     }
