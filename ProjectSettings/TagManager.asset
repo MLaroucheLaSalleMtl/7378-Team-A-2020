@@ -12,6 +12,7 @@ TagManager:
   - Ghost
   - Eden
   - NPC4
+  - Energy
   layers:
   - Default
   - TransparentFX

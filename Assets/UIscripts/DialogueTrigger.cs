@@ -15,7 +15,9 @@ public class DialogueTrigger : MonoBehaviour
     private bool reset = false;
     public bool isDialogue = false;
 
-   
+    
+
+    
     private void OnTriggerEnter(Collider other)
     {
         
@@ -45,6 +47,8 @@ public class DialogueTrigger : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;               
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             isDialogue = true;
+
+            
         }
     }
    

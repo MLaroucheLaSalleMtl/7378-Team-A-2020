@@ -7,6 +7,8 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class playerHealth : MonoBehaviour
 {
     public float health = 100f;
+   
+
     private Animator anim;
     public Image hpImg;
     public static playerHealth instance;
@@ -23,6 +25,14 @@ public class playerHealth : MonoBehaviour
     public GameObject SecondPanel;
     public GameObject ThridPanel;
 
+   
+    public AudioSource LivesAdd;
+    public int CountNum = 0;
+    public GameObject PointerForBoss;
+    public GameObject BossPanel;
+    public GameObject Pointer;
+    //Music forCollecting
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +44,12 @@ public class playerHealth : MonoBehaviour
         DeadHint.canvasRenderer.SetAlpha(0.0f);
         DeadText.canvasRenderer.SetAlpha(0.0f);
 
+        LivesAdd = GetComponent<AudioSource>();
+        
     }
 
     public void takeDamage(float damage)
     {
-        
 
         health -= damage;
         hpImg.fillAmount = health / 100;
@@ -56,7 +67,9 @@ public class playerHealth : MonoBehaviour
            
             //To stop other music
             GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
-
+            GameObject.Find("Trigger for Badger").GetComponent<Badger>().AttackMusic.Stop();
+            GameObject.Find("Trigger for Ant").GetComponent<Ant>().AttackMusic.Stop();
+            GameObject.Find("Trigger For Eagle").GetComponent<Eagle>().AttackMusic.Stop();
             //The mission panel will be disappeared
             FirstPanel.SetActive(false);
             SecondPanel.SetActive(false);
@@ -71,4 +84,36 @@ public class playerHealth : MonoBehaviour
         DeadText.CrossFadeAlpha(2, 2, false);
         DeadHint.CrossFadeAlpha(2, 2, false);
     }
+
+    
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Item")
+        {
+            Destroy(other.gameObject);
+            hpImg.fillAmount += 1;
+            print("Lives added");
+
+            LivesAdd.Play();
+            DeadMusic.Stop();
+        }
+
+        if(other.gameObject.tag == "Energy")
+        {
+            DeadMusic.Stop();
+
+            Destroy(other.gameObject);
+            CountNum++;
+            print(CountNum);
+            
+            if (CountNum == 3)
+            {
+                PointerForBoss.SetActive(true);
+                BossPanel.SetActive(true);
+                Pointer.SetActive(false);
+            }
+        }
+    }
+
+   
 }

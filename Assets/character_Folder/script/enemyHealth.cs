@@ -21,7 +21,9 @@ public class enemyHealth : MonoBehaviour
     public GameObject BackPortalForEagle;
 
     public GameObject PointerForCollection;
-    public GameObject PointerForBoss;
+    
+    //Finish quest music
+    public AudioSource FinishQuestMusic;
 
     private void Start()
     {
@@ -42,23 +44,20 @@ public class enemyHealth : MonoBehaviour
     }
 
     private void Update()
-    {        
-        if (isDead)
-        {           
-            Instantiate(hpp, transform.position, transform.rotation);           
-        }        
+    {
+        FinishQuestMusic = GetComponent<AudioSource>();
     }
     public void takeDamage(float damage)
     {
         health -= damage;
         health_img.fillAmount = health / 100f;
-        Debug.Log(health_img.fillAmount);
+        //Debug.Log(health_img.fillAmount);
         if (health <= 0)
         {            
             health = 0;
             die();
-
-           
+            
+            
             if (DialogueManager.id == 5)
             {
                 //Eagle
@@ -68,7 +67,8 @@ public class enemyHealth : MonoBehaviour
                 BackPortal.SetActive(false);
                 BackPortalForEagle.SetActive(true);
 
-               
+                Instantiate(hpp, transform.position, transform.rotation);
+                
             }
             if (DialogueManager.id == 0)
             {
@@ -79,6 +79,7 @@ public class enemyHealth : MonoBehaviour
                 BackPortalForAnt.SetActive(false);
                 BackPortalForEagle.SetActive(false);
 
+                Instantiate(hpp, transform.position, transform.rotation);
                 
             }
             if (DialogueManager.id == 6)
@@ -90,7 +91,10 @@ public class enemyHealth : MonoBehaviour
                 BackPortal.SetActive(false);
 
                 PointerForCollection.SetActive(true);
-                PointerForBoss.SetActive(true);
+                
+
+                Instantiate(hpp, transform.position, transform.rotation);
+                FinishQuestMusic.Play();
             }
            
         }
