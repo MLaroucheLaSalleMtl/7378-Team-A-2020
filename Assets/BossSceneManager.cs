@@ -4,29 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BossSceneManager : MonoBehaviour
-{
-    public GameObject BossInfo;
-    public AudioSource BattleMusic;
-    public Transform player;
+{    
 
     public CameraShake camerShake;
 
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        BattleMusic = GetComponent<AudioSource>();
+        if(other.gameObject.tag== "Player")
+        {
+            StartCoroutine(camerShake.Shake(.80f, .8f));
+        }
+    }
+    //void Start()
+    //{
+    //    StartCoroutine(camerShake.Shake(.80f, .8f));
+        
+    //}
+    void Update()
+    {
+        StartCoroutine(camerShake.Shake(.80f, .8f));
+
     }
 
-    private void Update()
-    {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 50f)
-        {
-            BossInfo.SetActive(true);
-            BattleMusic.Play();
 
-            StartCoroutine(camerShake.Shake(.50f, .5f));
-
-
-        }
-
-    } 
 }

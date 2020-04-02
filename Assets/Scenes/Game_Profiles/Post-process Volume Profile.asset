@@ -80,9 +80,9 @@ MonoBehaviour:
     value: 0.471
   smoothness:
     overrideState: 1
-    value: 0.11
+    value: 0.15
   roundness:
-    overrideState: 1
+    overrideState: 0
     value: 1
   rounded:
     overrideState: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   preset:
-    overrideState: 1
+    overrideState: 0
     value: 5
   maximumIterationCount:
     overrideState: 0
@@ -222,14 +222,14 @@ MonoBehaviour:
     overrideState: 0
     value: 8
   maximumMarchDistance:
-    overrideState: 1
+    overrideState: 0
     value: 100
   distanceFade:
     overrideState: 1
-    value: 1
+    value: 0.2
   vignette:
     overrideState: 1
-    value: 1
+    value: 0.16
 --- !u!114 &6312378887715908918
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -247,7 +247,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 1
+    overrideState: 0
     value: 1
   intensity:
     overrideState: 1
@@ -257,7 +257,7 @@ MonoBehaviour:
     value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
     overrideState: 1
-    value: 1
+    value: 0
   noiseFilterTolerance:
     overrideState: 0
     value: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 3
+    value: 2
   toneCurveToeStrength:
     overrideState: 1
     value: 0.31
@@ -332,10 +332,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 22
+    value: 12
   tint:
-    overrideState: 1
-    value: 5
+    overrideState: 0
+    value: 0
   colorFilter:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -350,7 +350,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.4
+    value: 0.8
   contrast:
     overrideState: 1
     value: 5

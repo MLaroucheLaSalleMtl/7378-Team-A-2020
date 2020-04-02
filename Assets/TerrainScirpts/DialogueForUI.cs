@@ -40,6 +40,6 @@ public class DialogueForUI : MonoBehaviour
 
     void EndDialogue()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Loading");
     }
 }

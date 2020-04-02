@@ -20,7 +20,7 @@ public class UImanager : MonoBehaviour
     public void EnterGame()
     {
         ButtonClick.Play();
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene("StoryScene");
     }
 
     //Exit
