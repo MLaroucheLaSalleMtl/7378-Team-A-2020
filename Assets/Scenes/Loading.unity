@@ -553,8 +553,8 @@ MonoBehaviour:
   progressbar: {fileID: 910463331}
   txtPercent: {fileID: 746812198}
   waitForUserInput: 0
-  delay: 10
-  sceneToLoad: 4
+  delay: 20
+  sceneToLoad: 5
 --- !u!222 &910463333
 CanvasRenderer:
   m_ObjectHideFlags: 0

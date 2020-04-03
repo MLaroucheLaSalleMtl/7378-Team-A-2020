@@ -8882,7 +8882,7 @@ PrefabInstance:
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3344768620308883816, guid: 9dad83b11e5e03c4280e0b02ffa5befd,
         type: 3}
@@ -15748,9 +15748,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 357.7, y: 4.66, z: 198}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 871153882}
-  - {fileID: 5006512736554586193}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16226,7 +16224,7 @@ Transform:
   - {fileID: 2067779751}
   - {fileID: 278705351}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474290316
 GameObject:
@@ -18850,8 +18848,10 @@ Transform:
   m_LocalPosition: {x: 532.2014, y: 1.5061659, z: 159.69981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1133148446}
+  - {fileID: 425498379}
   - {fileID: 966567739}
+  - {fileID: 1133148446}
+  - {fileID: 910435727}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24641,7 +24641,7 @@ MonoBehaviour:
   BackPortalForAnt: {fileID: 1733888375}
   BackPortalForEagle: {fileID: 1306357324}
   PointerForCollection: {fileID: 926193905}
-  PointerForBoss: {fileID: 0}
+  FinishQuestMusic: {fileID: 0}
 --- !u!114 &762720009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28077,7 +28077,7 @@ Transform:
   - {fileID: 466569393}
   - {fileID: 105157048}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &931958588 stripped
 Transform:
@@ -28722,7 +28722,7 @@ MonoBehaviour:
   BackPortalForAnt: {fileID: 1733888375}
   BackPortalForEagle: {fileID: 1306357324}
   PointerForCollection: {fileID: 926193905}
-  PointerForBoss: {fileID: 0}
+  FinishQuestMusic: {fileID: 0}
 --- !u!136 &966567744
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34737,7 +34737,7 @@ MonoBehaviour:
   BackPortalForAnt: {fileID: 1733888375}
   BackPortalForEagle: {fileID: 1306357324}
   PointerForCollection: {fileID: 926193905}
-  PointerForBoss: {fileID: 0}
+  FinishQuestMusic: {fileID: 0}
 --- !u!136 &1133148451
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37166,7 +37166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 426240, guid: 36dd14b7ef773c54e96eb7d110c8b5ce, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 426240, guid: 36dd14b7ef773c54e96eb7d110c8b5ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -71772,7 +71772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1442432443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79763,7 +79763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -89657,7 +89657,7 @@ PrefabInstance:
     - target: {fileID: 6560245526017149756, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6560245526017149756, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
@@ -89804,6 +89804,11 @@ PrefabInstance:
       propertyPath: Pointer
       value: 
       objectReference: {fileID: 1621426706}
+    - target: {fileID: 7877346967428266283, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
+        type: 3}
+      propertyPath: BossDoor
+      value: 
+      objectReference: {fileID: 1442432442}
     - target: {fileID: 7877346967428266286, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: image
