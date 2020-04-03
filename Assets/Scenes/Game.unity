@@ -89043,7 +89043,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7877346967428266282, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a, type: 3}
 --- !u!64 &2397887744722491369
 MeshCollider:
