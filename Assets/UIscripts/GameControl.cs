@@ -69,8 +69,5 @@ public class GameControl : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-    public void Respawn()
-    {
-        Deadplayer.transform.position = ResPoint.transform.position;
-    }
+    
 }

@@ -32,7 +32,10 @@ public class playerHealth : MonoBehaviour
     public GameObject BossPanel;
     public GameObject Pointer;
     public GameObject BossDoor;
-    
+
+    //Fade in
+    public Image RedFadeIn;
+    public Image RedFadeOut;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +47,9 @@ public class playerHealth : MonoBehaviour
         DeadHint.canvasRenderer.SetAlpha(0.0f);
         DeadText.canvasRenderer.SetAlpha(0.0f);
 
+        //Player Health 
         LivesAdd = GetComponent<AudioSource>();
-        
+        RedFadeIn.canvasRenderer.SetAlpha(0.0f);
     }
 
     public void takeDamage(float damage)
@@ -53,7 +57,10 @@ public class playerHealth : MonoBehaviour
 
         health -= damage;
         hpImg.fillAmount = health / 100;
-        if(health <= 0)
+        PlayerHealthFadeIn();
+
+        StartCoroutine(FadeOut());
+        if (health <= 0)
         {
             health = 0;
             anim.SetBool("Die", true);
@@ -70,6 +77,7 @@ public class playerHealth : MonoBehaviour
             GameObject.Find("Trigger for Badger").GetComponent<Badger>().AttackMusic.Stop();
             GameObject.Find("Trigger for Ant").GetComponent<Ant>().AttackMusic.Stop();
             GameObject.Find("Trigger For Eagle").GetComponent<Eagle>().AttackMusic.Stop();
+            GameObject.Find("Trigger the town").GetComponent<Town>().TownMusic.Stop();
             //The mission panel will be disappeared
             FirstPanel.SetActive(false);
             SecondPanel.SetActive(false);
@@ -93,6 +101,7 @@ public class playerHealth : MonoBehaviour
             Destroy(other.gameObject);
             health += 40;
             hpImg.fillAmount = health / 100;
+          
             if (health >= 100)
             {
                 health = 100;
@@ -121,5 +130,19 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-   
+    void PlayerHealthFadeIn()
+    {
+        RedFadeIn.CrossFadeAlpha(1, 1, false);
+    }
+
+    void PlayerHealthFadeOut()
+    {
+        RedFadeOut.CrossFadeAlpha(0, 1, false);
+    }
+
+    IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(1);
+        PlayerHealthFadeOut();
+    }
 }
