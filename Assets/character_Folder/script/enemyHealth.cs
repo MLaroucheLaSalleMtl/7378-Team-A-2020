@@ -24,7 +24,7 @@ public class enemyHealth : MonoBehaviour
     
     //Finish quest music
     public AudioSource FinishQuestMusic;
-
+    public GameObject TriggerQuest;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -40,7 +40,8 @@ public class enemyHealth : MonoBehaviour
             health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
         }
         health_img.fillAmount = 1;
-       
+
+        TriggerQuest.SetActive(false);
     }
 
     private void Update()
@@ -68,7 +69,7 @@ public class enemyHealth : MonoBehaviour
                 BackPortalForEagle.SetActive(true);
 
                 Instantiate(hpp, transform.position, transform.rotation);
-                
+               
             }
             if (DialogueManager.id == 0)
             {
@@ -95,6 +96,7 @@ public class enemyHealth : MonoBehaviour
 
                 Instantiate(hpp, transform.position, transform.rotation);
                 FinishQuestMusic.Play();
+                TriggerQuest.SetActive(true);
             }
            
         }
