@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Quest;
     public Text questText;
     public GameObject Pointer;
-   
+    public GameObject PointerForCollection;
 
     //Open the different portal
     public GameObject EaglePortal;
@@ -30,8 +30,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation1;
     public GameObject Exclamation2;
     public GameObject Exclamation3;
-    public GameObject QuestionMark;
-
+    
     //Music For Collection
     public AudioSource AccpetMusic;
     
@@ -117,8 +116,8 @@ public class DialogueManager : MonoBehaviour
         if (id == 4)
         {
             questText.text = "Collect 3 Stamina Potions";
-            Pointer.SetActive(true);
-            QuestionMark.SetActive(false);
+            Pointer.SetActive(true);           
+            PointerForCollection.SetActive(false);
         }
         
         
