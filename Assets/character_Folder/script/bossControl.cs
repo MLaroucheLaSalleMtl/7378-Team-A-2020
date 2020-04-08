@@ -39,9 +39,18 @@ public class bossControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(boss_currentState != bossState.Death)
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (boss_currentState != bossState.Death)
         {
-            setBossState();
+            if(boss_currentState != bossState.Sleep)
+            {
+                agent.isStopped = true;
+            }
+            else if(distance < 7f)
+            {
+                setBossState();
+                anim.SetBool("Idle", true);
+            }
         }
     }
 
@@ -49,20 +58,12 @@ public class bossControl : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
         Debug.Log(distance);
-        if (distance < 7f)
-        {
-            anim.SetBool("Idle", true);
-        }
-        else
-        {
-            agent.isStopped = true;
-        }
 
         int attackRange = Random.Range(0, 4);
         Debug.Log(attackRange);
         if(attackRange == 1)
         {
-            if (distance > 2f)
+            if (distance > 5f)
             {
                 anim.SetBool("Run", true);
                 agent.SetDestination(player.position);
