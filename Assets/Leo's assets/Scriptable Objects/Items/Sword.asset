@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67800e2a102dd64e8f452d1c59aa266, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7118809020386302049, guid: bc8df0af2971f1346a749b200ddc35cf, type: 3}
   type: 1
-  description: 
-  attackDamageBoost: 0
-  armorBoost: 0
+  description: Can be applied to the character to boost the basic status.
+  atkBoost: 15
+  amrBoost: 10
