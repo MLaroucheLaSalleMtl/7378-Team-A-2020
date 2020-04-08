@@ -25,6 +25,7 @@ public class InventoryObject : ScriptableObject
     }
 }
 
+[System.Serializable]
 public class InventorySlot
 {
     public ItemObject item;

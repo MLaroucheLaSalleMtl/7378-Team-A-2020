@@ -104,7 +104,7 @@ public class DragonControl : MonoBehaviour
         }
     }
 
-    dragonState SetDragonState(dragonState currentState, dragonState lastState, float dragonToPlayerDis)
+    dragonState SetDragonState(dragonState currentState, dragonState lastState, float dragonToPlayerDis) //set up dragon behavior
     {
         float initialDistance = Vector3.Distance(initialPos, transform.position); //this calculate the distance between the original position and current position
         dragonToPlayerDis = Vector3.Distance(transform.position, tpuc.transform.position);
@@ -141,14 +141,14 @@ public class DragonControl : MonoBehaviour
         return currentState;
     }
 
-    void dragonStateControl(dragonState currentState)
+    void dragonStateControl(dragonState currentState)  //connect behavior to animator
     {
         if(currentState == dragonState.Run || currentState == dragonState.Pause)
         {
             if (currentState != dragonState.Attack)
             {
                 Vector3 playerPosition = new Vector3(tpuc.transform.position.x, tpuc.transform.position.y, tpuc.transform.position.z);
-                if (Vector3.Distance(transform.position, playerPosition) >= 2.1f)
+                if (Vector3.Distance(transform.position, playerPosition) >= 2f)
                 {
                         anim.SetBool("Walk", false);
                         anim.SetBool("Run", true);
@@ -161,8 +161,9 @@ public class DragonControl : MonoBehaviour
             anim.SetBool("Run", false);
             WhereToGo.Set(0f, 0f, 0f);
             agent.SetDestination(transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(tpuc.transform.position - transform.position), 5f * Time.deltaTime); // keep looking at the player
-            //https://www.youtube.com/watch?v=xppompv1DBg&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=11
+            Quaternion lookRotation = Quaternion.LookRotation(tpuc.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 5f * Time.deltaTime); // keep looking at the player
+            //https://www.youtube.com/watch?v=xppompv1DBg&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=11   at 7:02
 
             if (currentAttackTime >= waitAttackTime)//wait one sec and attack
             {
@@ -200,11 +201,10 @@ public class DragonControl : MonoBehaviour
             //{
             //    agent.SetDestination(wanderPoint);
             //}
-            if (Vector3.Distance(transform.position, whereTo_Navigate) <= 5f)
+            if (Vector3.Distance(transform.position, whereTo_Navigate) <= 5f)//if the distance of initial position and current position <=5, start randomly wander
             {
                 whereTo_Navigate.x = Random.Range(initialPos.x - 10f, initialPos.x + 10f);
                 whereTo_Navigate.z = Random.Range(initialPos.z - 10f, initialPos.z + 10f);
-                //get idea from https://www.youtube.com/watch?v=Puqupldb4yc
             }
             else
             {
@@ -226,7 +226,7 @@ public class DragonControl : MonoBehaviour
         NavMesh.SamplePosition(randompoint, out hit, wanderRadius, -1);
         return new Vector3(hit.position.x, transform.position.y, hit.position.z);
         //dragon wander
-        //https://www.youtube.com/watch?v=U1nPbJZ1hlc&t=230s
+        //https://www.youtube.com/watch?v=U1nPbJZ1hlc&t=230s  at 7:55
     }
 
 
