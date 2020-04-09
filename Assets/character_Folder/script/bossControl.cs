@@ -42,9 +42,10 @@ public class bossControl : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         if (boss_currentState != bossState.Death)
         {
-            if(boss_currentState != bossState.Sleep)
+            if(distance > 7 && boss_currentState != bossState.Sleep)
             {
                 agent.isStopped = true;
+                anim.SetBool("Idle", true);
             }
             else if(distance < 7f)
             {
@@ -59,9 +60,9 @@ public class bossControl : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         Debug.Log(distance);
 
-        int attackRange = Random.Range(0, 4);
+        int attackRange = Random.Range(1, 2);
         Debug.Log(attackRange);
-        if(attackRange == 1)
+        if(attackRange == 1 || attackRange == 2)
         {
             if (distance > 5f)
             {
@@ -86,9 +87,10 @@ public class bossControl : MonoBehaviour
                     currentAttackTime += Time.deltaTime;
                 }
             }
-        }else if(attackRange == 2)
+        }else if(attackRange == 3)
         {
-
+            agent.isStopped = true;
+            anim.SetInteger("Attack", 3);
         }
 
     }
