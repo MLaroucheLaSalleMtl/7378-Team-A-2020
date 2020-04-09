@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkillDamage : MonoBehaviour
 {
     public LayerMask enemyLayer;
-    float radius = 4f;
+    float radius = 6f;
     float damage = 30f;
 
     //public GameObject damageArea;
@@ -30,8 +30,6 @@ public class SkillDamage : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        //if (damageArea == null)
-        //    return;
 
         Gizmos.DrawWireSphere(transform.position, radius);
     }
