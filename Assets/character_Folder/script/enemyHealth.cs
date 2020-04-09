@@ -25,6 +25,7 @@ public class enemyHealth : MonoBehaviour
     //Finish quest music
     public AudioSource FinishQuestMusic;
     public GameObject TriggerQuest;
+    
     private void Start()
     {
         anim = GetComponent<Animator>();
