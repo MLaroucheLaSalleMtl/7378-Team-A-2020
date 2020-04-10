@@ -13,6 +13,7 @@ TagManager:
   - Eden
   - NPC4
   - Energy
+  - HealthAdding
   layers:
   - Default
   - TransparentFX
