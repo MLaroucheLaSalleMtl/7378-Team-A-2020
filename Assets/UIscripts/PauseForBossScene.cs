@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class PauseForBossScene : MonoBehaviour
@@ -36,5 +37,12 @@ public class PauseForBossScene : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 1f;
         player.GetComponent<ThirdPersonUserControl>().enabled = true;
+    }
+
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene("UI");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

@@ -25,6 +25,7 @@ public class enemyHealth : MonoBehaviour
     //Finish quest music
     public AudioSource FinishQuestMusic;
     public GameObject TriggerQuest;
+    
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -41,7 +42,7 @@ public class enemyHealth : MonoBehaviour
         }
         health_img.fillAmount = 1;
 
-        TriggerQuest.SetActive(false);
+        //TriggerQuest.SetActive(false);
     }
 
     private void Update()
