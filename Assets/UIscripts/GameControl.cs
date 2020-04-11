@@ -13,7 +13,7 @@ public class GameControl : MonoBehaviour
    
     public GameObject player;
     
-    [SerializeField] private Transform ResPoint;
+    
     [SerializeField] private Transform Deadplayer;
    
     // Update is called once per frame

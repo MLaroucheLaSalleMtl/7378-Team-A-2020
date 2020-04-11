@@ -42,7 +42,7 @@ public class enemyHealth : MonoBehaviour
         }
         health_img.fillAmount = 1;
 
-        TriggerQuest.SetActive(false);
+        //TriggerQuest.SetActive(false);
     }
 
     private void Update()
