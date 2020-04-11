@@ -26,6 +26,7 @@ public class bossControl : MonoBehaviour
     private NavMeshAgent agent;
     private float currentAttackTime;
     private float waitAttackTime = 1f;
+    private enemyHealth bossHp;
 
     private Animator anim;
     // Start is called before the first frame update
@@ -34,64 +35,64 @@ public class bossControl : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        bossHp = GetComponent<enemyHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
+        
         if (boss_currentState != bossState.Death)
         {
-            if(distance > 7 && boss_currentState != bossState.Sleep)
-            {
-                agent.isStopped = true;
-                anim.SetBool("Idle", true);
-            }
-            else if(distance < 7f)
-            {
-                setBossState();
-                anim.SetBool("Idle", true);
-            }
+            setBossState();
         }
     }
 
     void setBossState()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-        Debug.Log(distance);
-
-        int attackRange = Random.Range(1, 2);
-        Debug.Log(attackRange);
-        if(attackRange == 1 || attackRange == 2)
+        if (bossHp.health < 100)
         {
-            if (distance > 5f)
+            anim.SetBool("Idle", true);
+            int attackRange = Random.Range(1, 2);
+            if (attackRange == 1 || attackRange == 2)
             {
-                anim.SetBool("Run", true);
-                agent.SetDestination(player.position);
-                agent.isStopped = false;
-            }
-            else
-            {
-                agent.isStopped = true;
-                anim.SetBool("Run", false);
-                Vector3 targetPosition = new Vector3(player.position.x, player.position.y, player.position.z);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetPosition - transform.position), 5f * Time.deltaTime);
-                if (currentAttackTime >= waitAttackTime)
+                if (distance > 5f)
                 {
-                    anim.SetInteger("Attack", 1);
-                    currentAttackTime = 0f;
+                    anim.SetBool("Run", true);
+                    agent.SetDestination(player.position);
+                    agent.isStopped = false;
                 }
                 else
                 {
-                    anim.SetInteger("Attack", 0);
-                    currentAttackTime += Time.deltaTime;
+                    agent.isStopped = true;
+                    anim.SetBool("Run", false);
+                    Vector3 targetPosition = new Vector3(player.position.x, player.position.y, player.position.z);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetPosition - transform.position), 5f * Time.deltaTime);
+                    if (currentAttackTime >= waitAttackTime)
+                    {
+                        anim.SetInteger("Attack", 1);
+                        currentAttackTime = 0f;
+                    }
+                    else
+                    {
+                        anim.SetInteger("Attack", 0);
+                        currentAttackTime += Time.deltaTime;
+                    }
                 }
             }
-        }else if(attackRange == 3)
+            else if (attackRange == 3)
+            {
+                agent.isStopped = true;
+                anim.SetInteger("Attack", 3);
+            }
+        }
+        else
         {
             agent.isStopped = true;
-            anim.SetInteger("Attack", 3);
         }
+
+        
 
     }
 }
