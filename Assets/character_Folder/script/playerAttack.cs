@@ -87,25 +87,23 @@ public class playerAttack : MonoBehaviour
             {
                 anim.SetBool("A3", true);
             }
-        }          
-        //Fire = context.performed;
-        //anim.SetBool("Attack1", Fire);
+        }
 
 
-        //Collider[] touchEnemy = Physics.OverlapCapsule(start.position, end.position, 0.2f, enemylayer);
         Collider[] touchEnemy = Physics.OverlapSphere(attackArea.position, attackRange, enemylayer);//collects the gameobject with layer "enemy"
 
         foreach (Collider enemy in touchEnemy)
         {
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("slash1") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash3") || anim.GetCurrentAnimatorStateInfo(0).IsName("slash4"))
             {
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.07f)
                 {
                     enemy.GetComponent<enemyHealth>().takeDamage(damage);
                 }
             }
         }
     }
+
 
     public void Skill1(InputAction.CallbackContext context)
     {

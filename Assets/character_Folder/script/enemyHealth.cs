@@ -33,7 +33,7 @@ public class enemyHealth : MonoBehaviour
         dc = GetComponent<DragonControl>();
         if(tag == "boss")
         {
-            health_img = GameObject.Find("boss_hp").GetComponent<Image>();
+            health_img = transform.Find("boss_hp").GetComponent<Image>();
         }
         else
         {
