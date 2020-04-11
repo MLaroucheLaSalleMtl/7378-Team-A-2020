@@ -99,7 +99,7 @@ public class playerHealth : MonoBehaviour
         if(other.gameObject.tag == "Item")
         {
             Destroy(other.gameObject);
-            health += 40;
+            health += 20;
             hpImg.fillAmount = health / 100;
           
             if (health >= 100)
