@@ -54,38 +54,47 @@ public class bossControl : MonoBehaviour
         if (bossHp.health < 100)
         {
             anim.SetBool("Idle", true);
-            int attackRange = Random.Range(1, 2);
-            if (attackRange == 1 || attackRange == 2)
+            anim.SetBool("Run", true);
+            agent.SetDestination(player.position);
+            agent.isStopped = false;
+            if (distance <= 5f)
             {
-                if (distance > 5f)
+                agent.isStopped = true;
+                anim.SetBool("Run", false);
+                Vector3 targetPosition = new Vector3(player.position.x, player.position.y, player.position.z);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetPosition - transform.position), 5f * Time.deltaTime);
+                if (currentAttackTime >= waitAttackTime)
                 {
-                    anim.SetBool("Run", true);
-                    agent.SetDestination(player.position);
-                    agent.isStopped = false;
+                    int attackRange = Random.Range(1, 4);
+                    Debug.Log(attackRange);
+                    anim.SetInteger("Attack", attackRange);
+                    currentAttackTime = 0f;
                 }
                 else
                 {
-                    agent.isStopped = true;
-                    anim.SetBool("Run", false);
-                    Vector3 targetPosition = new Vector3(player.position.x, player.position.y, player.position.z);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetPosition - transform.position), 5f * Time.deltaTime);
-                    if (currentAttackTime >= waitAttackTime)
-                    {
-                        anim.SetInteger("Attack", 1);
-                        currentAttackTime = 0f;
-                    }
-                    else
-                    {
-                        anim.SetInteger("Attack", 0);
-                        currentAttackTime += Time.deltaTime;
-                    }
+                    anim.SetInteger("Attack", 0);
+                    currentAttackTime += Time.deltaTime;
                 }
             }
-            else if (attackRange == 3)
-            {
-                agent.isStopped = true;
-                anim.SetInteger("Attack", 3);
-            }
+            //else if(attackRange == 4)
+            //{
+            //    anim.SetBool("TakeOff", true);
+            //    if(anim.GetCurrentAnimatorStateInfo(0).IsName("TakeOff") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.1f)
+            //    {
+            //        anim.SetInteger("Attack", 4);
+            //        if (anim.GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
+            //        {
+            //            anim.SetBool("Land", true);
+            //            anim.SetBool("TakeOff", false);
+            //            if(anim.GetCurrentAnimatorStateInfo(0).IsName("Land") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
+            //            {
+            //                anim.SetBool("Land", false);
+            //                anim.SetInteger("Attack", 0);
+            //                anim.SetBool("Idle", true);
+            //            }
+            //        }
+            //    }
+            //}
         }
         else
         {
