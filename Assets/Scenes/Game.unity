@@ -69824,7 +69824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1591234935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -69841,8 +69841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 0}
-  m_SizeDelta: {x: 500, y: 700}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1303.2, y: 733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591234936
 MonoBehaviour:
@@ -69893,11 +69893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e6886ccddbeec5c42b9c5a504e8dd616, type: 2}
-  X_START: 100
-  Y_START: 250
-  X_SPACE_BETWEEN_ITEM: 100
+  X_SPACE_BETWEEN_ITEM: 50
   NUMBER_OF_COLUMN: 6
-  Y_SPACE_BETWEEN_ITEM: 100
+  Y_SPACE_BETWEEN_ITEM: 50
 --- !u!1 &1592705059
 GameObject:
   m_ObjectHideFlags: 0
@@ -85832,7 +85830,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e6886ccddbeec5c42b9c5a504e8dd616, type: 2}
-  inv: {fileID: 1591234934}
 --- !u!114 &8296172667444716100 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7877346967428266281, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58781c8fd80780440847eaaf7fd5bb88, type: 3}
-  m_Name: Gems
+  m_Script: {fileID: 11500000, guid: 994df71f34835ad4198bc91337befa25, type: 3}
+  m_Name: Bones
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4319090973309548806, guid: 49f0578786362484da6f20b40dd49c7c, type: 3}
-  type: 2
-  description: Quest complete requirements.
+  prefab: {fileID: 5848349279047712231, guid: ca5f57a0befbe124fb216e825d714635, type: 3}
+  type: 3
+  description: 
