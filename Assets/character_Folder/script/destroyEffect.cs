@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class destroyEffect : MonoBehaviour
 {
-    public float time = 2f;
+    public float time = 8f;
     // Start is called before the first frame update
     void Start()
     {
