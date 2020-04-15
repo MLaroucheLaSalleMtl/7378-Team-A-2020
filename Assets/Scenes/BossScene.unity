@@ -2265,6 +2265,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289574832}
   m_CullTransparentMesh: 0
+--- !u!1001 &321590970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2032458215}
+    m_Modifications:
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -633
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250951, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_Name
+      value: firball laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907027510316250951, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91dde07fa8af4ae46a4a37fd734fc6e2, type: 3}
 --- !u!1 &332720844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2351,7 @@ GameObject:
   - component: {fileID: 332720847}
   - component: {fileID: 332720846}
   m_Layer: 5
-  m_Name: Image
+  m_Name: boss_hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4494,6 +4568,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220233334}
   m_CullTransparentMesh: 0
+--- !u!4 &1271023564 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7907027510316250950, guid: 91dde07fa8af4ae46a4a37fd734fc6e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 321590970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282510512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5288,6 +5368,31 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1555951648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1418094742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418094741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94000ff9274c63840a2a7c67ae94de1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDead: 0
+  hpp: {fileID: 1148755492}
+  BossHp_Img: {fileID: 332720846}
+  FinishQuestPanel: {fileID: 0}
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
+  BackPortal: {fileID: 0}
+  BackPortalForAnt: {fileID: 0}
+  BackPortalForEagle: {fileID: 0}
+  PointerForCollection: {fileID: 0}
+  FinishQuestMusic: {fileID: 0}
+  TriggerQuest: {fileID: 0}
 --- !u!114 &1418094744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,30 +5441,6 @@ CapsuleCollider:
   m_Height: 6.28
   m_Direction: 2
   m_Center: {x: 0, y: 2.21, z: 0.88}
---- !u!114 &1418094747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418094741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94000ff9274c63840a2a7c67ae94de1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  isDead: 0
-  hpp: {fileID: 0}
-  FinishQuestPanel: {fileID: 0}
-  skill1: {fileID: 0}
-  skill2: {fileID: 0}
-  BackPortal: {fileID: 0}
-  BackPortalForAnt: {fileID: 0}
-  BackPortalForEagle: {fileID: 0}
-  PointerForCollection: {fileID: 0}
-  FinishQuestMusic: {fileID: 0}
-  TriggerQuest: {fileID: 0}
 --- !u!114 &1418094748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5373,6 +5454,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 0
+--- !u!114 &1418094749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418094741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4629f0fe9ff6ff346a4031def0c7a2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1428057858
 GameObject:
   m_ObjectHideFlags: 0
@@ -5954,7 +6051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1874929920, guid: 1d6a1f892e553d1499063fb87a1266c4, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 1874929922, guid: 1d6a1f892e553d1499063fb87a1266c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7205,51 +7302,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1918964865
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1918964868}
-  - component: {fileID: 1918964867}
-  m_Layer: 0
-  m_Name: fireball spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1918964867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918964865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc7b5ccbd2637e4580a0f8fe114c05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireball: {fileID: 2576850746553617715, guid: 1aa18e630b2a83045a552c80064e9cbd,
-    type: 3}
---- !u!4 &1918964868
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918964865}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.708553, y: 2.274084, z: 29.650696}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929228905
 GameObject:
   m_ObjectHideFlags: 0
@@ -7810,7 +7862,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -70, y: -46.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1271023564}
   m_Father: {fileID: 1555951649}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7826,7 +7879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc7b5ccbd2637e4580a0f8fe114c05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 2576850746553617715, guid: 1aa18e630b2a83045a552c80064e9cbd,
+  fireball: {fileID: 8786473120336390635, guid: 1aa18e630b2a83045a552c80064e9cbd,
     type: 3}
 --- !u!1001 &2054605363
 PrefabInstance:
