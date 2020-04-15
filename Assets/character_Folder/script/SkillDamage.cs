@@ -6,7 +6,7 @@ public class SkillDamage : MonoBehaviour
 {
     public LayerMask enemyLayer;
     float radius = 6f;
-    float damage = 30f;
+    float damage = 15f;
 
     //public GameObject damageArea;
 

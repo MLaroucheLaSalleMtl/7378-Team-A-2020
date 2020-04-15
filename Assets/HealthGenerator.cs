@@ -12,36 +12,25 @@ public class HealthGenerator : MonoBehaviour
 
     private void Start()
     {
-        LivesAdd = GetComponent<AudioSource>();       
-        
-    }
-
-    private void Update()
-    {
-        GenerateHealth();
-    }
-
-    void GenerateHealth()
-    {
-        //if () this will depend on boss hp
-        //{
-        //    Instantiate(HPGenerator, transform.position, transform.rotation);
-        //}
-
-    }
-
+        LivesAdd = GetComponent<AudioSource>();
+        print(GameObject.Find("character").GetComponent<playerHealth>().health);
+    }  
+  
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            print("Yes");
+            
             if (GameObject.Find("character").GetComponent<playerHealth>().health < 100)
             {
-                GameObject.Find("character").GetComponent<playerHealth>().health += 10;
+                GameObject.Find("character").GetComponent<playerHealth>().health += 40;
                 GameObject.Find("character").GetComponent<playerHealth>().hpImg.fillAmount = GameObject.Find("character").GetComponent<playerHealth>().health / 100;
                 LivesAdd.Play();
                 StartCoroutine(SetActiveFalse());
             }
+
+            
+
         }
     }
 

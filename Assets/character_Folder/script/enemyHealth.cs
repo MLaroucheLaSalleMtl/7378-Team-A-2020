@@ -26,7 +26,7 @@ public class enemyHealth : MonoBehaviour
     public GameObject PointerForCollection;
     
     //Finish quest music
-    public AudioSource FinishQuestMusic;
+   
     public GameObject TriggerQuest;
     
     private void Start()
@@ -49,10 +49,7 @@ public class enemyHealth : MonoBehaviour
         //TriggerQuest.SetActive(false);
     }
 
-    private void Update()
-    {
-        FinishQuestMusic = GetComponent<AudioSource>();
-    }
+    
     public void takeDamage(float damage)
     {
         health -= damage;
@@ -107,7 +104,7 @@ public class enemyHealth : MonoBehaviour
                 
 
                 Instantiate(hpp, transform.position, transform.rotation);
-                FinishQuestMusic.Play();
+                
                 TriggerQuest.SetActive(true);
             }
            
