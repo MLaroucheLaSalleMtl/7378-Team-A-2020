@@ -29,7 +29,7 @@ public class BossState : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
         //Debug.Log(range);
-        if(state != Boss_State.death && bossHp.health < 100f)
+        if(state != Boss_State.death && bossHp.health < 1000)
         {
             if(distance <= 5)
             {

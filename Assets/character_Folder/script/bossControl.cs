@@ -84,7 +84,7 @@ public class bossControl : MonoBehaviour
                 anim.SetBool("Run", false);
                 Vector3 targetPosition = new Vector3(player.position.x, player.position.y, player.position.z);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetPosition - transform.position), 5f * Time.deltaTime);
-                Debug.Log(currentAttackTime);
+
                 if (currentAttackTime >= waitAttackTime)
                 {
                     int range = Random.Range(1, 3);

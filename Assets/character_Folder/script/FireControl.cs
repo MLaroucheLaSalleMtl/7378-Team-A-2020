@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireControl : MonoBehaviour
 {
     private GameObject boss;
+    private bool isShooting;
+    private bool isFlying;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +16,28 @@ public class FireControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        setFire();
+        if (isShooting)
+        {
+            transform.position += transform.forward * (10 * Time.deltaTime);
+        }else if (isFlying)
+        {
+            //Vector3 fireDirection = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z + 1f);
+            //transform.position = Vector3.MoveTowards(transform.position, fireDirection, 5 * Time.deltaTime);
+        }
+    }
+
+    void setFire()
+    {
         if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FireballShoot"))
         {
-            transform.position += transform.forward * (8 * Time.deltaTime);
-        }else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot"))
+            isShooting = true;
+            isFlying = false;
+        }
+        else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot"))
         {
-            Vector3 fireDirection = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z + 1f);
-            transform.position = Vector3.MoveTowards(transform.position, fireDirection, 5 * Time.deltaTime);
+            isShooting = false;
+            isFlying = true;
         }
     }
 }

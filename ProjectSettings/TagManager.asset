@@ -15,6 +15,7 @@ TagManager:
   - Energy
   - HealthAdding
   - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX
