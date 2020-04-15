@@ -210,7 +210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Animation model
+  m_Text: Animation model baiyang chen
 --- !u!222 &20870519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enemy Design&Programming
+  m_Text: Enemy Design&Programming baiyang chen
 --- !u!222 &322579861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1285,7 +1285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Animation Programming
+  m_Text: Animation Programming baiyang chen
 --- !u!222 &328055036
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1449,7 +1449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quest dialogue system
+  m_Text: Quest dialogue system haoqian gu
 --- !u!222 &335410850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Publicity
+  m_Text: Publicity haoqian @ baiyang @ chenyi
 --- !u!222 &365254376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1939,7 +1939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: Inventory chenyi liao
 --- !u!222 &421403131
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2283,7 +2283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Music
+  m_Text: Music haoqian gu
 --- !u!222 &518699633
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4069,7 +4069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Art
+  m_Text: Art haoqian gu
 --- !u!222 &885310003
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4167,7 +4167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: StoryLine
+  m_Text: StoryLine haoqiangu @ chenyi liao
 --- !u!222 &953253843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4265,7 +4265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Testing
+  m_Text: Testing haoqian @ baiyang @ chenyi
 --- !u!222 &971519619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4718,7 +4718,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special Effect & Skills
+  m_Text: Special Effect & Skills baiyang chen
 --- !u!222 &1109213349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5307,7 +5307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: UI Programming
+  m_Text: UI Programming haoqian gu
 --- !u!222 &1319666696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6071,7 +6071,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: UI Design
+  m_Text: UI Design haoqian gu
 --- !u!222 &1443402491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8669,7 +8669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Terrain & envrionment
+  m_Text: Terrain & envrionment haoqian gu
 --- !u!222 &2084102481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9084,7 +9084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Action Programming
+  m_Text: Action Programming baiyang chen
 --- !u!222 &2112731360
 CanvasRenderer:
   m_ObjectHideFlags: 0

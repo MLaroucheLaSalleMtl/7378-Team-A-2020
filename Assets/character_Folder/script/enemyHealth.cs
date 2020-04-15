@@ -10,7 +10,10 @@ public class enemyHealth : MonoBehaviour
     public bool isDead;
     public GameObject hpp;
     private DragonControl dc;
+    private BossState state;
     private Image health_img;
+    public Image BossHp_Img;
+    private Transform canvas;
 
     //UI       
     public GameObject FinishQuestPanel;
@@ -31,18 +34,10 @@ public class enemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         isDead = false;
         dc = GetComponent<DragonControl>();
-        if(tag == "boss")
-        {
-            health_img = transform.Find("boss_hp").GetComponent<Image>();
-        }
-        else
-        {
-            //health_img = GameObject.Find("dragon_hp").GetComponent<Image>();
-            health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
-        }
+        health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
         health_img.fillAmount = 1;
-
-        TriggerQuest.SetActive(false);
+        state = GetComponent<BossState>();
+        //TriggerQuest.SetActive(false);
     }
 
     private void Update()
@@ -52,7 +47,14 @@ public class enemyHealth : MonoBehaviour
     public void takeDamage(float damage)
     {
         health -= damage;
-        health_img.fillAmount = health / 100f;
+        if(tag == "Boss")
+        {
+            BossHp_Img.fillAmount = health / 100;
+        }
+        else
+        {
+            health_img.fillAmount = health / 100f;
+        }
         //Debug.Log(health_img.fillAmount);
         if (health <= 0)
         {            
@@ -105,7 +107,14 @@ public class enemyHealth : MonoBehaviour
 
     void die()
     {
-        dc.dragonCurrentState = dragonState.Death;
+        if(tag == "Boss")
+        {
+            state.Boss_State = Boss_State.death;
+        }
+        else
+        {
+            dc.dragonCurrentState = dragonState.Death;
+        }
         isDead = true;       
     }
 

@@ -4,29 +4,60 @@ using UnityEngine;
 
 public class BossSkillEffect : MonoBehaviour
 {
-    private float speed = 2f;
+    private float speed = 5f;
     private Transform player;
     private Vector3 playerPos;
     public GameObject fireball;
+    private Transform firelaser;
+    private GameObject boss;
+    private bool isFireBall;
+    private bool isFireBaser;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        boss = GameObject.Find("Boss");
+        firelaser = transform.Find("firball laser");
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-        if(player != null)
+        Vector3 firePos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        instantiateBall();
+        if (isFireBall)
         {
-            //GameObject ballInstantiate = Instantiate(fireball, transform) as GameObject;
-            transform.position += transform.forward * (speed * Time.deltaTime);
-            transform.LookAt(player);
-            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPos - transform.position), 1);
+            GameObject ball = Instantiate(fireball, firePos, Quaternion.identity);
+            isFireBall = false;
+        }else if (isFireBaser)
+            {
+            firelaser.gameObject.SetActive(true);
+            //if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            //{
+            //    firelaser.gameObject.SetActive(false);
+            //}
         }
-        //particle.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerPos - transform.position), 1);
-        //particle.transform.position += transform.forward * (speed * Time.deltaTime);
+    }
+
+    void instantiateBall()
+    {
+        if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FireballShoot"))
+        {
+            //Debug.Log("before" + boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime);
+            if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.55f && boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.57f)
+            {
+                //Debug.Log("after anim" + boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime);
+                isFireBall = true;
+            }
+        }
+        else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot"))
+        {
+            isFireBaser = true;
+            if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            {
+                isFireBaser = false;
+            }
+        }
     }
 }
