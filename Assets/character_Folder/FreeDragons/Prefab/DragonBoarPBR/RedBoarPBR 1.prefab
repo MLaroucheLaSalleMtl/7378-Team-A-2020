@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 6064831442972869620}
   m_Layer: 0
   m_Name: RedBoarPBR 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   health: 100
   isDead: 0
   hpp: {fileID: 0}
+  BossHp_Img: {fileID: 0}
   FinishQuestPanel: {fileID: 0}
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -1407,6 +1408,8 @@ MonoBehaviour:
   BackPortalForAnt: {fileID: 0}
   BackPortalForEagle: {fileID: 0}
   PointerForCollection: {fileID: 0}
+  FinishQuestMusic: {fileID: 0}
+  TriggerQuest: {fileID: 0}
 --- !u!114 &6064831442972869627
 MonoBehaviour:
   m_ObjectHideFlags: 0

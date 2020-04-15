@@ -109,7 +109,7 @@ public class DragonControl : MonoBehaviour
         float initialDistance = Vector3.Distance(initialPos, transform.position); //this calculate the distance between the original position and current position
         dragonToPlayerDis = Vector3.Distance(transform.position, tpuc.transform.position);
         
-        if (initialDistance > followDis || playerHealth.instance.health<=0)// if the dragon exceed the follow distance, it returns to the initial position, 怪物范围8以外会返回上一个state
+        if (initialDistance > followDis)// if the dragon exceed the follow distance, it returns to the initial position, 怪物范围8以外会返回上一个state
         {
             lastState = currentState;  //lets say the dragon is chesing the player, if it exceed 8, the state of chasing became last state
             currentState = dragonState.BackToWander;

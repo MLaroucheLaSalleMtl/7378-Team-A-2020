@@ -25,7 +25,6 @@ public class BossAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("aaaa");
         if (endAttack)
         {
             DealDamage(checkIfAttacking());
