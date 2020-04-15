@@ -62,7 +62,6 @@ public class bossControl : MonoBehaviour
                 agent.isStopped = false;
                 anim.SetBool("Run", true);
                 agent.SetDestination(player.position);
-                Debug.Log(currentAttackTime);
                 int skillRange = 0;
                 if (currentAttackTime >= waitSkillTime)
                 {

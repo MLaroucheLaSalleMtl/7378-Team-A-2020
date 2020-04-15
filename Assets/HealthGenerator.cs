@@ -35,10 +35,10 @@ public class HealthGenerator : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             print("Yes");
-            if (GameObject.Find("character").GetComponent<playerHealth>().health <= 100)
+            if (GameObject.Find("character").GetComponent<playerHealth>().health < 100)
             {
                 GameObject.Find("character").GetComponent<playerHealth>().health += 10;
-                hpImg.fillAmount = GameObject.Find("character").GetComponent<playerHealth>().health / 100;
+                GameObject.Find("character").GetComponent<playerHealth>().hpImg.fillAmount = GameObject.Find("character").GetComponent<playerHealth>().health / 100;
                 LivesAdd.Play();
                 StartCoroutine(SetActiveFalse());
             }
