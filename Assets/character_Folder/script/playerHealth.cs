@@ -50,6 +50,7 @@ public class playerHealth : MonoBehaviour
         //Player Health 
         LivesAdd = GetComponent<AudioSource>();
         RedFadeIn.canvasRenderer.SetAlpha(0.0f);
+        hpImg.fillAmount = health / 100;
     }
 
     public void takeDamage(float damage)

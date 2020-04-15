@@ -3481,6 +3481,11 @@ PrefabInstance:
       propertyPath: LivesAdd
       value: 
       objectReference: {fileID: 1826312720}
+    - target: {fileID: 7877346967428266283, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
+        type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 7877346967428266286, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: m_Enabled
@@ -3494,6 +3499,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 7877346967428266282, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a, type: 3}
+    - {fileID: 7877346967428266286, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a, type: 3}
 --- !u!1 &893580346
 GameObject:

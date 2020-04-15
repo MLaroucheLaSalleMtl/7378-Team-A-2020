@@ -34,8 +34,17 @@ public class enemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         isDead = false;
         dc = GetComponent<DragonControl>();
-        health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
-        health_img.fillAmount = 1;
+        if(tag == "Enemy")
+        {
+            health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
+            health_img.fillAmount = 1;
+        }
+        else
+        {
+            BossHp_Img.fillAmount = health / 1000;
+            BossHp_Img.fillAmount = 1;
+        }
+        
         state = GetComponent<BossState>();
         //TriggerQuest.SetActive(false);
     }
@@ -49,7 +58,7 @@ public class enemyHealth : MonoBehaviour
         health -= damage;
         if(tag == "Boss")
         {
-            BossHp_Img.fillAmount = health / 100;
+            BossHp_Img.fillAmount = health / 1000;
         }
         else
         {
