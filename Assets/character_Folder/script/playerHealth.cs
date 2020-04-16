@@ -19,7 +19,7 @@ public class playerHealth : MonoBehaviour
     public Image DeadBackground;
     public Text DeadText;
     public Text DeadHint;
-    public GameObject player;
+
 
     public GameObject FirstPanel;
     public GameObject SecondPanel;
@@ -36,6 +36,8 @@ public class playerHealth : MonoBehaviour
     //Fade in
     public Image RedFadeIn;
     public Image RedFadeOut;
+
+    public GameObject HpGenerator;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,11 +81,16 @@ public class playerHealth : MonoBehaviour
             GameObject.Find("Trigger for Ant").GetComponent<Ant>().AttackMusic.Stop();
             GameObject.Find("Trigger For Eagle").GetComponent<Eagle>().AttackMusic.Stop();
             GameObject.Find("Trigger the town").GetComponent<Town>().TownMusic.Stop();
+            //GameObject.Find("Terrain").GetComponent<AudioSource>().Stop();
             //The mission panel will be disappeared
             FirstPanel.SetActive(false);
             SecondPanel.SetActive(false);
             ThridPanel.SetActive(false);
 
+        }
+        if (health <= 30)
+        {
+            HpGenerator.SetActive(true);
         }
     }
 
@@ -100,7 +107,7 @@ public class playerHealth : MonoBehaviour
         if(other.gameObject.tag == "Item")
         {
             Destroy(other.gameObject);
-            health += 20;
+            health += 10;
             hpImg.fillAmount = health / 100;
           
             if (health >= 100)
@@ -129,6 +136,8 @@ public class playerHealth : MonoBehaviour
                 BossDoor.SetActive(true);
             }
         }
+
+        
     }
 
     void PlayerHealthFadeIn()

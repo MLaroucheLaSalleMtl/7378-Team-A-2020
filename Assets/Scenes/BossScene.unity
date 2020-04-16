@@ -3306,6 +3306,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2193279693450121600, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193279693450121602, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2193279693471046130, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -3399,7 +3409,7 @@ PrefabInstance:
     - target: {fileID: 7877346967428266281, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: damage
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7877346967428266283, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
@@ -3484,8 +3494,13 @@ PrefabInstance:
     - target: {fileID: 7877346967428266283, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: health
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7877346967428266283, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
+        type: 3}
+      propertyPath: HpGenerator
+      value: 
+      objectReference: {fileID: 1826312716}
     - target: {fileID: 7877346967428266286, guid: 69d4e96ec6c3d2b4a991d41edccd7f9a,
         type: 3}
       propertyPath: m_Enabled
@@ -5390,15 +5405,14 @@ MonoBehaviour:
   isDead: 0
   hpp: {fileID: 1148755492}
   BossHp_Img: {fileID: 332720846}
-  FinishQuestPanel: {fileID: 0}
-  skill1: {fileID: 0}
-  skill2: {fileID: 0}
-  BackPortal: {fileID: 0}
-  BackPortalForAnt: {fileID: 0}
-  BackPortalForEagle: {fileID: 0}
-  PointerForCollection: {fileID: 0}
-  FinishQuestMusic: {fileID: 0}
-  TriggerQuest: {fileID: 0}
+  FinishQuestPanel: {fileID: 276899536}
+  skill1: {fileID: 276899536}
+  skill2: {fileID: 276899536}
+  BackPortal: {fileID: 276899536}
+  BackPortalForAnt: {fileID: 276899536}
+  BackPortalForEagle: {fileID: 276899536}
+  PointerForCollection: {fileID: 276899536}
+  TriggerQuest: {fileID: 276899536}
 --- !u!114 &1418094744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5472,7 +5486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4629f0fe9ff6ff346a4031def0c7a2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -6058,6 +6072,10 @@ PrefabInstance:
     - target: {fileID: 1874929920, guid: 1d6a1f892e553d1499063fb87a1266c4, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874929920, guid: 1d6a1f892e553d1499063fb87a1266c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874929922, guid: 1d6a1f892e553d1499063fb87a1266c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7056,7 +7074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1826312717
 MonoBehaviour:
   m_ObjectHideFlags: 0
