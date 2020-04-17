@@ -5,9 +5,6 @@ using UnityEngine.AI;
 
 public class bossControl : MonoBehaviour
 {
-    private float attackDis = 1.5f;
-    private float alert_Attack_Distance = 8f;
-    private float followDistance = 15f;
     private float enemyToPlayerDistance;
 
     private Transform player;

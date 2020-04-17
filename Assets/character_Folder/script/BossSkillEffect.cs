@@ -33,10 +33,10 @@ public class BossSkillEffect : MonoBehaviour
         }else if (isFireBaser)
             {
             firelaser.gameObject.SetActive(true);
-            //if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
-            //{
-            //    firelaser.gameObject.SetActive(false);
-            //}
+        }
+        else if(!isFireBaser)
+        {
+            firelaser.gameObject.SetActive(false);
         }
     }
 
