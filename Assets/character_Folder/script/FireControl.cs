@@ -7,10 +7,12 @@ public class FireControl : MonoBehaviour
     private GameObject boss;
     private bool isShooting;
     private bool isFlying;
+    private Rigidbody rig;
     // Start is called before the first frame update
     void Start()
     {
         boss = GameObject.Find("Boss");
+        rig = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,11 +21,8 @@ public class FireControl : MonoBehaviour
         setFire();
         if (isShooting)
         {
-            transform.position += transform.forward * (10 * Time.deltaTime);
-        }else if (isFlying)
-        {
-            //Vector3 fireDirection = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z + 1f);
-            //transform.position = Vector3.MoveTowards(transform.position, fireDirection, 5 * Time.deltaTime);
+            //transform.position += transform.forward * (5 * Time.deltaTime);
+            rig.AddForce(transform.forward * 0.1f, ForceMode.Impulse);
         }
     }
 
@@ -33,11 +32,6 @@ public class FireControl : MonoBehaviour
         {
             isShooting = true;
             isFlying = false;
-        }
-        else if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot"))
-        {
-            isShooting = false;
-            isFlying = true;
         }
     }
 }

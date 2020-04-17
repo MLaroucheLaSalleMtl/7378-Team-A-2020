@@ -45,4 +45,9 @@ public class PauseForBossScene : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("BossScene");
+    }
 }

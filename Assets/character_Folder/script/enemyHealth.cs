@@ -24,9 +24,9 @@ public class enemyHealth : MonoBehaviour
     public GameObject BackPortalForEagle;
 
     public GameObject PointerForCollection;
-    
-    //Finish quest music
+    public GameObject DefeatPanel;
    
+    
     public GameObject TriggerQuest;
     
     private void Start()
@@ -113,15 +113,23 @@ public class enemyHealth : MonoBehaviour
 
     void die()
     {
-        if(tag == "Boss")
-        {
-            state.Boss_State = Boss_State.death;
-        }
-        else
+        //if (tag == "Boss")
+        //{
+        //    state.Boss_State = Boss_State.death;
+        //}
+        //else
+        //{
+        if(tag=="Enemy")
+            dc.dragonCurrentState = dragonState.Death;
+        isDead = true;
+
+        if (tag == "Boss")
         {
             dc.dragonCurrentState = dragonState.Death;
+            isDead = true;
+            DefeatPanel.SetActive(true);
         }
-        isDead = true;       
+          
     }
 
     

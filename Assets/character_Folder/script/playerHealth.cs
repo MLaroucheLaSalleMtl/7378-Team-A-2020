@@ -54,7 +54,7 @@ public class playerHealth : MonoBehaviour
         RedFadeIn.canvasRenderer.SetAlpha(0.0f);
         hpImg.fillAmount = health / 100;
     }
-
+    bool once = false;
     public void takeDamage(float damage)
     {
 
@@ -63,9 +63,10 @@ public class playerHealth : MonoBehaviour
         PlayerHealthFadeIn();
 
         StartCoroutine(FadeOut());
-        if (health <= 0)
+        if (health <= 0 && !once)
         {
             health = 0;
+            once = true;
             anim.SetBool("Die", true);
 
             //To show the dead panel
