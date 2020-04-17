@@ -113,14 +113,15 @@ public class enemyHealth : MonoBehaviour
 
     void die()
     {
-        if(tag == "Boss")
-        {
-            state.Boss_State = Boss_State.death;
-        }
-        else
-        {
+        //if (tag == "Boss")
+        //{
+        //    state.Boss_State = Boss_State.death;
+        //}
+        //else
+        //{
+        if(tag=="Enemy")
             dc.dragonCurrentState = dragonState.Death;
-        }
+        //}
         isDead = true;       
     }
 
