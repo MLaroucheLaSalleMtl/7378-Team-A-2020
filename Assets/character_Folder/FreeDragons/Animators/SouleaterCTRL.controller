@@ -215,7 +215,7 @@ AnimatorController:
   - m_Name: Attack
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 4
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Run
