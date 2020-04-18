@@ -19,6 +19,7 @@ public class BossSkillEffect : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         boss = GameObject.Find("Boss");
         firelaser = transform.Find("firball laser");
+        //transform.Rotate(new Vector3(0.0f, 0.0f, 0.0f));
     }
 
     // Update is called once per frame
@@ -33,10 +34,10 @@ public class BossSkillEffect : MonoBehaviour
         }else if (isFireBaser)
             {
             firelaser.gameObject.SetActive(true);
-            //if (boss.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
-            //{
-            //    firelaser.gameObject.SetActive(false);
-            //}
+        }
+        else if(!isFireBaser)
+        {
+            firelaser.gameObject.SetActive(false);
         }
     }
 

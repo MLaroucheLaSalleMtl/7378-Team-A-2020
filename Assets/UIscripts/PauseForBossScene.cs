@@ -9,6 +9,7 @@ public class PauseForBossScene : MonoBehaviour
     public GameObject PauseUI;
     public static bool GameIsPause = false;
     public GameObject player;
+    public GameObject BattlePanel;
 
     // Update is called once per frame
     void Update()
@@ -44,5 +45,20 @@ public class PauseForBossScene : MonoBehaviour
         SceneManager.LoadScene("UI");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("BossScene");
+    }
+
+    public void ResumeBattleGame()
+    {
+        BattlePanel.SetActive(false);
+        GameIsPause = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1f;
+        player.GetComponent<ThirdPersonUserControl>().enabled = true;
     }
 }

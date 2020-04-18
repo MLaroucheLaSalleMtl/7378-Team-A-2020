@@ -7,11 +7,11 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class playerHealth : MonoBehaviour
 {
     public float health = 100f;
-   
 
     private Animator anim;
     public Image hpImg;
     public static playerHealth instance;
+    public bool canAddEnegy;
 
     //To open the dead UI Panel
     public GameObject DeadPanel;
@@ -53,8 +53,9 @@ public class playerHealth : MonoBehaviour
         LivesAdd = GetComponent<AudioSource>();
         RedFadeIn.canvasRenderer.SetAlpha(0.0f);
         hpImg.fillAmount = health / 100;
+        canAddEnegy = false;
     }
-
+    bool once = false;
     public void takeDamage(float damage)
     {
 
@@ -63,9 +64,10 @@ public class playerHealth : MonoBehaviour
         PlayerHealthFadeIn();
 
         StartCoroutine(FadeOut());
-        if (health <= 0)
+        if (health <= 0 && !once)
         {
             health = 0;
+            once = true;
             anim.SetBool("Die", true);
 
             //To show the dead panel
@@ -123,7 +125,6 @@ public class playerHealth : MonoBehaviour
         if(other.gameObject.tag == "Energy")
         {
             DeadMusic.Stop();
-
             Destroy(other.gameObject);
             CountNum++;
             print(CountNum);
@@ -135,6 +136,7 @@ public class playerHealth : MonoBehaviour
                 Pointer.SetActive(false);
                 BossDoor.SetActive(true);
             }
+            canAddEnegy = true;
         }
 
         

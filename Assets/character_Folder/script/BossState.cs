@@ -41,19 +41,12 @@ public class BossState : MonoBehaviour
             }
 
         }
-        else if(bossHp.health <= 0)
+        if(bossHp.health <= 0)
         {
             state = Boss_State.death;
         }
     }
 
-    IEnumerator ramdonGenerate()
-    {
-        int attack_range = Random.Range(1, 5);
-        range = attack_range;
-        yield return new WaitForSeconds(5);
-        print(attack_range);
-    }
     public Boss_State Boss_State
     {
         get { return state; }
