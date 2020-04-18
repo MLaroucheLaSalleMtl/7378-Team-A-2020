@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Tutorial : MonoBehaviour
 {
@@ -17,11 +18,6 @@ public class Tutorial : MonoBehaviour
         TutorialPanel.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Continue()
     {
@@ -30,6 +26,9 @@ public class Tutorial : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         TutorialPanel.SetActive(false);
-        
+    }
+    public void onContinue(InputAction.CallbackContext context)
+    {
+        Continue();
     }
 }
