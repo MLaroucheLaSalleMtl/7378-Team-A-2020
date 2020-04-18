@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
 public class playerAttack : MonoBehaviour
 {
     public bool CanAttack;
@@ -35,13 +36,27 @@ public class playerAttack : MonoBehaviour
     public GameObject skill2;
 
     public GameObject mission1;
+
+    public bool canPlayLighting;
+    public bool canPlayPowerup;
+
+    public Image EnegyImg;
+    private float enegy;
+    private float enegyConsume;
+    private playerHealth ph;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         effect = GetComponent<playerAttactEffect>();
+        ph = GetComponent<playerHealth>();
         instance = this;
         CanAttack = true;
+        canPlayLighting = false;
+        canPlayPowerup = false;
+        enegy = 100;
+        EnegyImg.fillAmount = enegy / 100;
     }
 
     // Update is called once per frame
@@ -58,11 +73,34 @@ public class playerAttack : MonoBehaviour
         if (canPlaySkill1)
         {
             fadeInOut(fillSkill1, 0.7f);
+            if (canPlayLighting)
+            {
+                enegy -= 10;
+                EnegyImg.fillAmount = enegy / 100;
+                canPlayLighting = false;
+            }
         }
         else if (canPlaySkill2)
         {
             fadeInOut(fillSkill2, 1f);
+            if (canPlayPowerup)
+            {
+                enegy -= 5;
+                EnegyImg.fillAmount = enegy / 100;
+                canPlayPowerup = false;
+            }
         }
+        if (ph.canAddEnegy && enegy < 100)
+        {
+            enegy += 10;
+            EnegyImg.fillAmount = enegy / 100f;
+            ph.canAddEnegy = false;
+            if (EnegyImg.fillAmount >= 1)
+            {
+                EnegyImg.fillAmount = 1;
+            }
+        }
+        
     }
 
     public void onAttack(InputAction.CallbackContext context)
@@ -111,11 +149,12 @@ public class playerAttack : MonoBehaviour
         {
             if (mission1.activeInHierarchy)
             {
-                if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+                if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded") && EnegyImg.fillAmount >= 10 / 100)
                 {
-                    anim.SetInteger("Skill", 1);
-                    canPlaySkill1 = true;
-                    effect.lighting();
+                        anim.SetInteger("Skill", 1);
+                        canPlaySkill1 = true;
+                        effect.lighting();
+                        canPlayLighting = true;
                 }
                 else
                 {
@@ -129,11 +168,12 @@ public class playerAttack : MonoBehaviour
     {
         if (skill2.activeInHierarchy)
         {
-            if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+            if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded") && EnegyImg.fillAmount >= 10 / 100)
             {
-                anim.SetInteger("Skill", 2);
-                canPlaySkill2 = true;
-                effect.magicCircle();
+                    anim.SetInteger("Skill", 2);
+                    canPlaySkill2 = true;
+                    effect.magicCircle();
+                    canPlayPowerup = true;
             }
             else
             {
@@ -167,7 +207,6 @@ public class playerAttack : MonoBehaviour
             }
         }
     }
-
 
     private void OnDrawGizmos()
     {

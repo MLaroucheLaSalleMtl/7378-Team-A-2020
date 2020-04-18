@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossAttack : MonoBehaviour
 {
     public float damage = 10f;
+    public float bigDamage = 15f;
     private Animator anim;
     public LayerMask playerLayer;
     private playerHealth playerHP;
@@ -41,7 +42,8 @@ public class BossAttack : MonoBehaviour
     bool checkIfAttacking()
     {
         bool isAttacking = false;
-        if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("BasicAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("TailAttack"))
+        if (!anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("BasicAttack") || anim.GetCurrentAnimatorStateInfo(0).IsName("TailAttack") || 
+            !anim.IsInTransition(0) && anim.GetCurrentAnimatorStateInfo(0).IsName("FireballShoot") || anim.GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot"))
         {
             if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f)
             {
@@ -60,6 +62,10 @@ public class BossAttack : MonoBehaviour
             if (Vector3.Distance(transform.position, player.position) <= 5f)
             {
                 playerHP.takeDamage(damage);
+            }
+            else if(Vector3.Distance(transform.position, player.position) <= 8f)
+            {
+                playerHP.takeDamage(bigDamage);
             }
         }
     }

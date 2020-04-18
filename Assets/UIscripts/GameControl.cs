@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Slider))]
 public class GameControl : MonoBehaviour
@@ -15,7 +16,7 @@ public class GameControl : MonoBehaviour
     
     
     [SerializeField] private Transform Deadplayer;
-   
+
     // Update is called once per frame
     void Update()
     {
@@ -29,8 +30,19 @@ public class GameControl : MonoBehaviour
             //    lastPressed = 0;
             //}
         }
+    }
 
-        
+    public void onEscape(InputAction.CallbackContext context)
+    {
+        PauseInGame();
+    }
+
+    public void onResume(InputAction.CallbackContext context)
+    {
+        if (GameIsPause)
+        {
+            ResumeGame();
+        }
     }
 
     void PauseInGame()

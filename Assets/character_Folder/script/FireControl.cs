@@ -13,6 +13,7 @@ public class FireControl : MonoBehaviour
     {
         boss = GameObject.Find("Boss");
         rig = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -22,7 +23,8 @@ public class FireControl : MonoBehaviour
         if (isShooting)
         {
             //transform.position += transform.forward * (5 * Time.deltaTime);
-            rig.AddForce(transform.forward * 0.1f, ForceMode.Impulse);
+            Vector3 pos = transform.localScale;
+            rig.AddForce(pos * 0.1f, ForceMode.Impulse);
         }
     }
 
