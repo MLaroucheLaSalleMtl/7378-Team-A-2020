@@ -19,6 +19,7 @@ public class BossSkillEffect : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         boss = GameObject.Find("Boss");
         firelaser = transform.Find("firball laser");
+        //transform.Rotate(new Vector3(0.0f, 0.0f, 0.0f));
     }
 
     // Update is called once per frame
