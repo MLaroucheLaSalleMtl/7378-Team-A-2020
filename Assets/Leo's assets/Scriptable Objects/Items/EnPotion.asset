@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6fcfc96b59c5144ae314f233523b09, type: 3}
+  m_Name: EnPotion
+  m_EditorClassIdentifier: Assembly-CSharp::PotionObject
+  prefab: {fileID: 3757942372421420564, guid: 4710d0dcce558234d9b4502a7c618a05, type: 3}
+  type: 0
+  description: Restore Energy. Can drop from a dead enemy within drop rate. Cheap
+    but effective.
+  restoreEnergyValue: 35
