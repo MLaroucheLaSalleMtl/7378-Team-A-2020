@@ -23,12 +23,7 @@ public class GameControl : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             PauseInGame();
-            //lastPressed++;
-            //if (lastPressed > 1)
-            //{
-            //    ResumeGame();
-            //    lastPressed = 0;
-            //}
+           
         }
     }
 
