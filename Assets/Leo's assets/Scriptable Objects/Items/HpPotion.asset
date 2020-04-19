@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 495edebd56e3dd94ca26cceaf6250ceb, type: 3}
-  m_Name: HpPotions
+  m_Name: HpPotion
   m_EditorClassIdentifier: 
   prefab: {fileID: 4359362522711802311, guid: 8e55cbb996565aa40a96e5da3d308f4f, type: 3}
   type: 0
-  description: Can drop from a dead enemy within drop rate. Cheap but effective.
-  restoreHealthValue: 50
+  description: Restore Health. Can drop from a dead enemy within drop rate. Cheap
+    but effective.
+  restoreHealthValue: 35

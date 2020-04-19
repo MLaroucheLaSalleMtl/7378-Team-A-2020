@@ -14043,6 +14043,7 @@ MonoBehaviour:
   Exclamation1: {fileID: 1308152679}
   Exclamation2: {fileID: 527650131}
   Exclamation3: {fileID: 990189289}
+  arrow: {fileID: 1064366434}
   AccpetMusic: {fileID: 497905595}
 --- !u!82 &497905595
 AudioSource:
@@ -14903,15 +14904,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013828724138, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 671.58
+      value: 352.53
       objectReference: {fileID: 0}
     - target: {fileID: 4000013828724138, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.727
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 4000013828724138, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 267.0045
+      value: 213.289
       objectReference: {fileID: 0}
     - target: {fileID: 4000013828724138, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19207,7 +19208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &660487152
 Transform:
   m_ObjectHideFlags: 0
@@ -25051,6 +25052,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &914705559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914705555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf85b248aceba9d4a9bb859f3ee43373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: de3f4996e54df7a4c9de6107c47ea41f, type: 2}
 --- !u!1001 &925898382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33109,6 +33123,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1167486852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167486848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf85b248aceba9d4a9bb859f3ee43373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 9ffdeae74b0f4b7498009312e11a1e37, type: 2}
 --- !u!1001 &1167788238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69416,8 +69443,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1303.2, y: 733}
+  m_AnchoredPosition: {x: 750, y: -100}
+  m_SizeDelta: {x: 400, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591234936
 MonoBehaviour:
@@ -69468,9 +69495,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e6886ccddbeec5c42b9c5a504e8dd616, type: 2}
-  X_SPACE_BETWEEN_ITEM: 50
-  NUMBER_OF_COLUMN: 6
-  Y_SPACE_BETWEEN_ITEM: 50
+  X_START: -120
+  Y_START: 220
+  X_SPACE_BETWEEN_ITEM: 100
+  NUMBER_OF_COLUMN: 3
+  Y_SPACE_BETWEEN_ITEM: 100
 --- !u!1 &1592705059
 GameObject:
   m_ObjectHideFlags: 0
@@ -74641,7 +74670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.67
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalPosition.z
