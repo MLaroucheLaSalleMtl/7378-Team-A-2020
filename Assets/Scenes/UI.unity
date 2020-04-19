@@ -1547,7 +1547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Publicity haoqian @ baiyang @ chenyi
+  m_Text: Publicity haoqiangu
 --- !u!222 &365254376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4265,7 +4265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Testing haoqian @ baiyang @ chenyi
+  m_Text: 'Testing haoqian '
 --- !u!222 &971519619
 CanvasRenderer:
   m_ObjectHideFlags: 0

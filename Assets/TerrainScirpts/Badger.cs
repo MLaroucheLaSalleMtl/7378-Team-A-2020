@@ -67,7 +67,7 @@ public class Badger : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         AttackMusic.Stop();
-        
-       
+        //GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Play();
+
     }
 }

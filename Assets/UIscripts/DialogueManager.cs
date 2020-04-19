@@ -30,7 +30,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject Exclamation1;
     public GameObject Exclamation2;
     public GameObject Exclamation3;
-    
+
+    public GameObject arrow;
     //Music For Collection
     public AudioSource AccpetMusic;
     
@@ -118,6 +119,8 @@ public class DialogueManager : MonoBehaviour
             questText.text = "Collect 3 Stamina Potions";
             Pointer.SetActive(true);           
             PointerForCollection.SetActive(false);
+
+            arrow.SetActive(false);
         }
         
         

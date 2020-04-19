@@ -14043,6 +14043,7 @@ MonoBehaviour:
   Exclamation1: {fileID: 1308152679}
   Exclamation2: {fileID: 527650131}
   Exclamation3: {fileID: 990189289}
+  arrow: {fileID: 1064366434}
   AccpetMusic: {fileID: 497905595}
 --- !u!82 &497905595
 AudioSource:
@@ -14907,7 +14908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013828724138, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.26
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 4000013828724138, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19207,7 +19208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &660487152
 Transform:
   m_ObjectHideFlags: 0
@@ -74669,7 +74670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.26
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalPosition.z

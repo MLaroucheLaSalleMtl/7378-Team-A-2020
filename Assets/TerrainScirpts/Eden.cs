@@ -9,6 +9,7 @@ public class Eden : MonoBehaviour
     public Image EdenNameBorder;
     public AudioSource EdenMusic;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class Eden : MonoBehaviour
             fadeIn();
             EdenMusic.Play();
             GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
+            
         }
     }
 

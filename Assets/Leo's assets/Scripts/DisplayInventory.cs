@@ -48,6 +48,7 @@ public class DisplayInventory : MonoBehaviour
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             itemsDisplayed.Add(inventory.Container[i], obj);
+
         }
     }
     public Vector3 GetPosition(int i)

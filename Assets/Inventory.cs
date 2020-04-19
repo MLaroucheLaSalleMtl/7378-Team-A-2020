@@ -27,10 +27,15 @@ public class Inventory : MonoBehaviour
     {
         Inventroy.SetActive(true);
         lastPressed++;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         if (lastPressed > 1)
         {
             Inventroy.SetActive(false);
             lastPressed = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
