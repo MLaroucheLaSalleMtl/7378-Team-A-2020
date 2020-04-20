@@ -12,6 +12,7 @@ public class BossSkillEffect : MonoBehaviour
     private GameObject boss;
     private bool isFireBall;
     private bool isFireBaser;
+    public Transform fireBallSpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class BossSkillEffect : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         boss = GameObject.Find("Boss");
         firelaser = transform.Find("firball laser");
+
         //transform.Rotate(new Vector3(0.0f, 0.0f, 0.0f));
     }
 
@@ -29,7 +31,7 @@ public class BossSkillEffect : MonoBehaviour
         instantiateBall();
         if (isFireBall)
         {
-            GameObject ball = Instantiate(fireball, firePos, Quaternion.identity);
+            GameObject ball = Instantiate(fireball, fireBallSpawner.position, fireBallSpawner.rotation);
             isFireBall = false;
         }else if (isFireBaser)
             {

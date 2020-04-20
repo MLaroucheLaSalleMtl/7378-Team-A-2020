@@ -77,7 +77,7 @@ public class playerHealth : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
            
-            //To stop other music
+            //To stop other music //GuHaoqian
             GameObject.Find("Trigger the town").GetComponent<Town>().ThemeMusic.Stop();
             GameObject.Find("Trigger for Badger").GetComponent<Badger>().AttackMusic.Stop();
             GameObject.Find("Trigger for Ant").GetComponent<Ant>().AttackMusic.Stop();

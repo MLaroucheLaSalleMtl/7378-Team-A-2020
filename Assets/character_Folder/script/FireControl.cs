@@ -8,12 +8,16 @@ public class FireControl : MonoBehaviour
     private bool isShooting;
     private bool isFlying;
     private Rigidbody rig;
+    private Transform player;
+    private playerHealth playerHP;
+    private float damage = 15;
     // Start is called before the first frame update
     void Start()
     {
         boss = GameObject.Find("Boss");
         rig = GetComponent<Rigidbody>();
-        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHP = player.GetComponent<playerHealth>();
     }
 
     // Update is called once per frame
@@ -22,9 +26,14 @@ public class FireControl : MonoBehaviour
         setFire();
         if (isShooting)
         {
-            //transform.position += transform.forward * (5 * Time.deltaTime);
-            Vector3 pos = transform.localScale;
-            rig.AddForce(pos * 0.1f, ForceMode.Impulse);
+            transform.localPosition += transform.forward * (18 * Time.deltaTime);
+            //Vector3 pos = transform.localScale;
+            //rig.AddForce(pos * 0.1f, ForceMode.Impulse);
+            //Vector3 target = player.position;
+            //rig.velocity = transform.forward * 20;
+            //transform.Translate(target, Space.Self);
+            //transform.position = Vector3.MoveTowards(transform.position, target, 10);
+            //rig.AddRelativeForce(transform.forward * 0.1f, ForceMode.Impulse);
         }
     }
 
@@ -34,6 +43,19 @@ public class FireControl : MonoBehaviour
         {
             isShooting = true;
             isFlying = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            playerHP.takeDamage(damage);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject, 3f);
         }
     }
 }
