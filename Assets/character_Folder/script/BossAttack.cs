@@ -63,7 +63,7 @@ public class BossAttack : MonoBehaviour
             {
                 playerHP.takeDamage(damage);
             }
-            else if(Vector3.Distance(transform.position, player.position) <= 8f)
+            else if(Vector3.Distance(transform.position, player.position) <= 8f && anim.GetCurrentAnimatorStateInfo(0).IsName("FlyFireballShoot"))
             {
                 playerHP.takeDamage(bigDamage);
             }

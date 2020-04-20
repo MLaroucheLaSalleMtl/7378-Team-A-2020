@@ -13,7 +13,6 @@ public class HealthGenerator : MonoBehaviour
     private void Start()
     {
         LivesAdd = GetComponent<AudioSource>();
-        print(GameObject.Find("character").GetComponent<playerHealth>().health);
     }  
   
     private void OnTriggerEnter(Collider other)
