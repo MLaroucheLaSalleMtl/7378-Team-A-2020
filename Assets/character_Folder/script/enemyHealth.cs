@@ -108,11 +108,7 @@ public class enemyHealth : MonoBehaviour
         if (tag == "Boss")
         {
             isDead = true;
-            DefeatPanel.SetActive(true);
         }
           
     }
-
-    
-
 }

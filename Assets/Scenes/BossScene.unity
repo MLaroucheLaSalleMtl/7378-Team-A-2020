@@ -6267,10 +6267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94000ff9274c63840a2a7c67ae94de1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100
   isDead: 0
-  hpp: {fileID: 0}
-  BossHp_Img: {fileID: 0}
+  hpp: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
   FinishQuestPanel: {fileID: 276899536}
   skill1: {fileID: 276899536}
   skill2: {fileID: 276899536}
