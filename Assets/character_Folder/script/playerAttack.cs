@@ -15,7 +15,7 @@ public class playerAttack : MonoBehaviour
     public int numOfclick = 0;
     float lastClickTime = 0;
     float maxDelay = 1f;
-    public float damage = 20;
+    public int damage = 20;
 
     bool Fire = false;
 
