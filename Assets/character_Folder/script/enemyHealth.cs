@@ -5,15 +5,12 @@ using UnityEngine.UI;
 
 public class enemyHealth : MonoBehaviour
 {
-    public float health = 100;
+    public int health;
     private Animator anim;
     public bool isDead;
     public GameObject hpp;
     private DragonControl dc;
     private BossState state;
-    private Image health_img;
-    public Image BossHp_Img;
-    private Transform canvas;
 
     //UI       
     public GameObject FinishQuestPanel;
@@ -28,39 +25,24 @@ public class enemyHealth : MonoBehaviour
    
     
     public GameObject TriggerQuest;
+    public HealthBar healthbar;
     
     private void Start()
     {
         anim = GetComponent<Animator>();
         isDead = false;
         dc = GetComponent<DragonControl>();
-        if(tag == "Enemy")
-        {
-            health_img = transform.Find("enemyHealth/dragon_hp").GetComponent<Image>();
-            health_img.fillAmount = 1;
-        }
-        else
-        {
-            BossHp_Img.fillAmount = health / 1000;
-            BossHp_Img.fillAmount = 1;
-        }
-        
+        healthbar.setMaxHp(health);
+
         state = GetComponent<BossState>();
         //TriggerQuest.SetActive(false);
     }
 
     
-    public void takeDamage(float damage)
+    public void takeDamage(int damage)
     {
         health -= damage;
-        if(tag == "Boss")
-        {
-            BossHp_Img.fillAmount = health / 1000;
-        }
-        else
-        {
-            health_img.fillAmount = health / 100f;
-        }
+        healthbar.setHealth(health);
         //Debug.Log(health_img.fillAmount);
         if (health <= 0)
         {            
@@ -125,7 +107,6 @@ public class enemyHealth : MonoBehaviour
 
         if (tag == "Boss")
         {
-            dc.dragonCurrentState = dragonState.Death;
             isDead = true;
             DefeatPanel.SetActive(true);
         }
